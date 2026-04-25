@@ -7,6 +7,7 @@ class PermanentStorage {
     case showsNotification = "show-notification"
     case launchedForTheFirstTime = "launched-for-the-first-time"
     case inputSourceOrder = "input-source-order"
+    case launchAtLogin = "launch-at-login"
   }
 
   private static func bool(forKey key: StorageKey, default defaultValue: Bool) -> Bool {
@@ -32,6 +33,15 @@ class PermanentStorage {
     }
     set {
       set(newValue, forKey: .launchedForTheFirstTime)
+    }
+  }
+
+  static var launchAtLogin: Bool {
+    get {
+      return bool(forKey: .launchAtLogin, default: false)
+    }
+    set {
+      set(newValue, forKey: .launchAtLogin)
     }
   }
 

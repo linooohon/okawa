@@ -3,6 +3,7 @@ import UserNotifications
 
 class PreferencesViewController: NSViewController {
   @IBOutlet weak var showNotificationCheckbox: NSButton!
+  @IBOutlet weak var launchAtLoginCheckbox: NSButton!
 
   private var notificationWarningLabel: NSTextField?
   private var openSettingsButton: NSButton?
@@ -11,6 +12,7 @@ class PreferencesViewController: NSViewController {
     super.viewDidLoad()
 
     showNotificationCheckbox.state = PermanentStorage.showsNotification.stateValue
+    launchAtLoginCheckbox?.state = LoginItemManager.shared.isEnabled.stateValue
     setupNotificationWarningUI()
   }
 
@@ -35,6 +37,18 @@ class PreferencesViewController: NSViewController {
       }
     } else {
       hideNotificationWarning()
+    }
+  }
+
+  @IBAction func toggleLaunchAtLogin(_ sender: NSButton) {
+    do {
+      if sender.state == .on {
+        try LoginItemManager.shared.enable()
+      } else {
+        try LoginItemManager.shared.disable()
+      }
+    } catch {
+      sender.state = LoginItemManager.shared.isEnabled.stateValue
     }
   }
 
