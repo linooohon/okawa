@@ -46,24 +46,25 @@ class ShortcutManager {
     return grouped
   }
 
-  private func cycle(shortcut: MASShortcut, within sources: [InputSource]) {
-    guard !sources.isEmpty else { return }
-
-    let currentId = InputSource.current?.id
-    let nextSource: InputSource
+  static func nextSource(after currentId: String?, within sources: [InputSource]) -> InputSource? {
+    guard !sources.isEmpty else { return nil }
 
     if let currentId = currentId,
-      let currentIndex = sources.firstIndex(where: { $0.id == currentId }) {
+       let currentIndex = sources.firstIndex(where: { $0.id == currentId }) {
       let nextIndex = (currentIndex + 1) % sources.count
-      nextSource = sources[nextIndex]
+      return sources[nextIndex]
     } else {
-      nextSource = sources[0]
+      return sources[0]
     }
+  }
 
-    nextSource.select()
+  private func cycle(shortcut: MASShortcut, within sources: [InputSource]) {
+    guard let next = ShortcutManager.nextSource(after: InputSource.current?.id, within: sources) else { return }
+
+    next.select()
 
     if PermanentStorage.showsNotification {
-      NotificationManager.deliver(nextSource.name, icon: nextSource.icon)
+      NotificationManager.deliver(next.name, icon: next.icon)
     }
   }
 
