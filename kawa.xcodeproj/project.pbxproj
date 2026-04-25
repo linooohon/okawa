@@ -24,6 +24,8 @@
 		EE92E8FD1F6CC98E00559B7C /* TISInputSource+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE92E8FC1F6CC98E00559B7C /* TISInputSource+Additions.swift */; };
 		AA000003AAAA000000000001 /* ShortcutConflictChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000003AAAA000000000002 /* ShortcutConflictChecker.swift */; };
 		AA000005AAAA000000000001 /* LoginItemManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000005AAAA000000000002 /* LoginItemManager.swift */; };
+		AA000006AAAA000000000001 /* SettingsPorter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000006AAAA000000000002 /* SettingsPorter.swift */; };
+		AA000007AAAA000000000001 /* SettingsPorterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000007AAAA000000000002 /* SettingsPorterTests.swift */; };
 		AA000001AAAA000000000001 /* TISInputSourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000001AAAA000000000002 /* TISInputSourceTests.swift */; };
 		AA000002AAAA000000000001 /* NotificationManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000002AAAA000000000002 /* NotificationManagerTests.swift */; };
 		AA000004AAAA000000000001 /* InputSourceAbbreviationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000004AAAA000000000002 /* InputSourceAbbreviationTests.swift */; };
@@ -58,6 +60,8 @@
 		CCCE7CF02C3A469D00A3F9A4 /* AlwaysAllowShortcutValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlwaysAllowShortcutValidator.swift; sourceTree = "<group>"; };
 		AA000003AAAA000000000002 /* ShortcutConflictChecker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortcutConflictChecker.swift; sourceTree = "<group>"; };
 		AA000005AAAA000000000002 /* LoginItemManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginItemManager.swift; sourceTree = "<group>"; };
+		AA000006AAAA000000000002 /* SettingsPorter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPorter.swift; sourceTree = "<group>"; };
+		AA000007AAAA000000000002 /* SettingsPorterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPorterTests.swift; sourceTree = "<group>"; };
 		EE92E8FC1F6CC98E00559B7C /* TISInputSource+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TISInputSource+Additions.swift"; sourceTree = "<group>"; };
 		AA000001AAAA000000000002 /* TISInputSourceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TISInputSourceTests.swift; sourceTree = "<group>"; };
 		AA000002AAAA000000000002 /* NotificationManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManagerTests.swift; sourceTree = "<group>"; };
@@ -117,6 +121,7 @@
 				CCCE7CF02C3A469D00A3F9A4 /* AlwaysAllowShortcutValidator.swift */,
 				AA000003AAAA000000000002 /* ShortcutConflictChecker.swift */,
 				AA000005AAAA000000000002 /* LoginItemManager.swift */,
+				AA000006AAAA000000000002 /* SettingsPorter.swift */,
 				CC4181671B6CB3CB007DA794 /* PreferencesViewController.swift */,
 				CC6D8ED11B654099005682C0 /* Images.xcassets */,
 				CC6D8ED31B654099005682C0 /* Main.storyboard */,
@@ -141,6 +146,7 @@
 				AA000001AAAA000000000002 /* TISInputSourceTests.swift */,
 				AA000002AAAA000000000002 /* NotificationManagerTests.swift */,
 				AA000004AAAA000000000002 /* InputSourceAbbreviationTests.swift */,
+				AA000007AAAA000000000002 /* SettingsPorterTests.swift */,
 			);
 			path = kawaTests;
 			sourceTree = "<group>";
@@ -278,6 +284,7 @@
 				CCCE7CF12C3A469D00A3F9A4 /* AlwaysAllowShortcutValidator.swift in Sources */,
 				AA000003AAAA000000000001 /* ShortcutConflictChecker.swift in Sources */,
 				AA000005AAAA000000000001 /* LoginItemManager.swift in Sources */,
+				AA000006AAAA000000000001 /* SettingsPorter.swift in Sources */,
 				EE92E8FD1F6CC98E00559B7C /* TISInputSource+Additions.swift in Sources */,
 				CC69E0781B66415300A92F58 /* ShortcutViewController.swift in Sources */,
 			);
@@ -290,6 +297,7 @@
 				AA000001AAAA000000000001 /* TISInputSourceTests.swift in Sources */,
 				AA000002AAAA000000000001 /* NotificationManagerTests.swift in Sources */,
 				AA000004AAAA000000000001 /* InputSourceAbbreviationTests.swift in Sources */,
+				AA000007AAAA000000000001 /* SettingsPorterTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

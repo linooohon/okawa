@@ -52,6 +52,83 @@ class PreferencesViewController: NSViewController {
     }
   }
 
+  @IBAction func exportSettings(_ sender: Any?) {
+    let sources = InputSource.orderedSources(using: PermanentStorage.inputSourceOrder)
+    let shortcuts: [(id: String, keyCode: Int?, modifierFlags: Int?)] = sources.map { source in
+      let key = source.id.replacingOccurrences(of: ".", with: "-")
+      if let data = UserDefaults.standard.data(forKey: key),
+         let shortcut = try? NSKeyedUnarchiver.unarchivedObject(ofClass: MASShortcut.self, from: data) {
+        return (id: source.id, keyCode: Int(shortcut.keyCode), modifierFlags: Int(shortcut.modifierFlags))
+      }
+      return (id: source.id, keyCode: nil, modifierFlags: nil)
+    }
+
+    let data = SettingsPorter.export(shortcuts: shortcuts)
+
+    let panel = NSSavePanel()
+    panel.allowedContentTypes = [.json]
+    panel.nameFieldStringValue = "kawa-settings.json"
+    panel.beginSheetModal(for: view.window!) { response in
+      guard response == .OK, let url = panel.url else { return }
+      try? data.write(to: url)
+    }
+  }
+
+  @IBAction func importSettings(_ sender: Any?) {
+    let panel = NSOpenPanel()
+    panel.allowedContentTypes = [.json]
+    panel.allowsMultipleSelection = false
+    panel.beginSheetModal(for: view.window!) { [weak self] response in
+      guard response == .OK, let url = panel.url else { return }
+      self?.performImport(from: url)
+    }
+  }
+
+  private func performImport(from url: URL) {
+    do {
+      let data = try Data(contentsOf: url)
+      let entries = try SettingsPorter.importData(data)
+
+      let availableIDs = InputSource.sources.map { $0.id }
+      let missing = SettingsPorter.missingSourceIDs(
+        in: entries.map { $0.inputSourceID },
+        available: availableIDs
+      )
+
+      if !missing.isEmpty {
+        let alert = NSAlert()
+        alert.messageText = "Some input sources not found"
+        alert.informativeText = "The following input sources are not available on this system and will be skipped:\n\n" + missing.joined(separator: "\n")
+        alert.addButton(withTitle: "Continue")
+        alert.addButton(withTitle: "Cancel")
+        let response = alert.runModal()
+        guard response == .alertFirstButtonReturn else { return }
+      }
+
+      for entry in entries {
+        let key = entry.inputSourceID.replacingOccurrences(of: ".", with: "-")
+        if let keyCode = entry.keyCode, let flags = entry.modifierFlags {
+          let shortcut = MASShortcut(keyCode: UInt(keyCode), modifierFlags: UInt(flags))
+          if let shortcutData = try? NSKeyedArchiver.archivedData(withRootObject: shortcut as Any, requiringSecureCoding: true) {
+            UserDefaults.standard.set(shortcutData, forKey: key)
+          }
+        } else {
+          UserDefaults.standard.removeObject(forKey: key)
+        }
+      }
+
+      // Reload the shortcut view controller
+      if let shortcutVC = children.compactMap({ $0 as? ShortcutViewController }).first {
+        shortcutVC.reloadInputSources()
+      }
+    } catch {
+      let alert = NSAlert()
+      alert.messageText = "Import Failed"
+      alert.informativeText = error.localizedDescription
+      alert.runModal()
+    }
+  }
+
   // MARK: - Notification warning UI
 
   private func setupNotificationWarningUI() {
