@@ -1,0 +1,96 @@
+import Carbon
+import Cocoa
+
+class InputSource {
+  let tisInputSource: TISInputSource
+  let icon: NSImage?
+
+  var id: String {
+    return tisInputSource.id
+  }
+
+  var name: String {
+    return tisInputSource.name
+  }
+
+  init(tisInputSource: TISInputSource) {
+    self.tisInputSource = tisInputSource
+
+    var iconImage: NSImage? = nil
+
+    if let imageURL = tisInputSource.iconImageURL {
+      for url in [imageURL.retinaImageURL, imageURL.tiffImageURL, imageURL] {
+        if let image = NSImage(contentsOf: url) {
+          iconImage = image
+          break
+        }
+      }
+    }
+
+    if iconImage == nil, let iconRef = tisInputSource.iconRef {
+      iconImage = NSImage(iconRef: iconRef)
+    }
+
+    self.icon = iconImage
+  }
+
+  func select() {
+    TISSelectInputSource(tisInputSource)
+  }
+}
+
+extension InputSource: Equatable {
+  static func == (lhs: InputSource, rhs: InputSource) -> Bool {
+    return lhs.id == rhs.id
+  }
+}
+
+extension InputSource {
+  static var sources: [InputSource] {
+    guard let unmanagedList = TISCreateInputSourceList(nil, false) else { return [] }
+    let inputSourceNSArray = unmanagedList.takeRetainedValue() as NSArray
+    guard let inputSourceList = inputSourceNSArray as? [TISInputSource] else { return [] }
+
+    return inputSourceList
+      .filter {
+        $0.category == TISInputSource.Category.keyboardInputSource && $0.isSelectable
+    }.map {
+      InputSource(tisInputSource: $0)
+    }
+  }
+
+  static func orderedSources(using order: [String]) -> [InputSource] {
+    let allSources = sources
+    var ordered: [InputSource] = []
+    var remaining = Dictionary(uniqueKeysWithValues: allSources.map { ($0.id, $0) })
+
+    for id in order {
+      if let source = remaining.removeValue(forKey: id) {
+        ordered.append(source)
+      }
+    }
+
+    // append any new sources that were not previously saved
+    ordered.append(contentsOf: remaining.values.sorted { $0.name < $1.name })
+    return ordered
+  }
+
+  static var current: InputSource? {
+    guard let current = TISCopyCurrentKeyboardInputSource()?.takeUnretainedValue() else { return nil }
+    return InputSource(tisInputSource: current)
+  }
+}
+
+private extension URL {
+  var retinaImageURL: URL {
+    var components = pathComponents
+    let filename: String = components.removeLast()
+    let ext: String = pathExtension
+    let retinaFilename = filename.replacingOccurrences(of: "." + ext, with: "@2x." + ext)
+    return NSURL.fileURL(withPathComponents: components + [retinaFilename])!
+  }
+
+  var tiffImageURL: URL {
+    return deletingPathExtension().appendingPathExtension("tiff")
+  }
+}

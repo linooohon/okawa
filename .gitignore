@@ -1,0 +1,9 @@
+Carthage/
+.DS_Store
+DerivedData/
+build/
+kawa.xcodeproj/project.xcworkspace/xcshareddata/swiftpm/Package.resolved
+
+
+.claude
+.env
