@@ -43,20 +43,6 @@ class ShortcutCellView: NSTableCellView {
     ShortcutManager.shared.rebuildBindings(with: InputSource.orderedSources(using: PermanentStorage.inputSourceOrder))
   }
 
-  func selectInput() {
-    guard let inputSource = inputSource else { return }
-
-    inputSource.select()
-
-    if PermanentStorage.showsNotification {
-      showNotification(inputSource.name, icon: inputSource.icon)
-    }
-  }
-
-  func showNotification(_ message: String, icon: NSImage?) {
-    NotificationManager.deliver(message, icon: icon)
-  }
-
   private func startObservingRecording() {
     guard !observingRecording else { return }
     shortcutView.addObserver(self, forKeyPath: "recording", options: [.new], context: &kvoContext)
