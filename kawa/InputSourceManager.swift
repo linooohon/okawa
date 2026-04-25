@@ -76,7 +76,7 @@ extension InputSource {
   }
 
   static var current: InputSource? {
-    guard let current = TISCopyCurrentKeyboardInputSource()?.takeUnretainedValue() else { return nil }
+    guard let current = TISCopyCurrentKeyboardInputSource()?.takeRetainedValue() else { return nil }
     return InputSource(tisInputSource: current)
   }
 }
@@ -87,7 +87,8 @@ private extension URL {
     let filename: String = components.removeLast()
     let ext: String = pathExtension
     let retinaFilename = filename.replacingOccurrences(of: "." + ext, with: "@2x." + ext)
-    return NSURL.fileURL(withPathComponents: components + [retinaFilename])!
+    guard let url = NSURL.fileURL(withPathComponents: components + [retinaFilename]) else { return self }
+    return url
   }
 
   var tiffImageURL: URL {
