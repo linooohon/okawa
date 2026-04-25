@@ -58,7 +58,7 @@ class PreferencesViewController: NSViewController {
       let key = source.id.replacingOccurrences(of: ".", with: "-")
       if let data = UserDefaults.standard.data(forKey: key),
          let shortcut = try? NSKeyedUnarchiver.unarchivedObject(ofClass: MASShortcut.self, from: data) {
-        return (id: source.id, keyCode: Int(shortcut.keyCode), modifierFlags: Int(shortcut.modifierFlags))
+        return (id: source.id, keyCode: Int(shortcut.keyCode), modifierFlags: Int(shortcut.modifierFlags.rawValue))
       }
       return (id: source.id, keyCode: nil, modifierFlags: nil)
     }
@@ -66,7 +66,7 @@ class PreferencesViewController: NSViewController {
     let data = SettingsPorter.export(shortcuts: shortcuts)
 
     let panel = NSSavePanel()
-    panel.allowedContentTypes = [.json]
+    panel.allowedFileTypes = ["json"]
     panel.nameFieldStringValue = "kawa-settings.json"
     panel.beginSheetModal(for: view.window!) { response in
       guard response == .OK, let url = panel.url else { return }
@@ -76,7 +76,7 @@ class PreferencesViewController: NSViewController {
 
   @IBAction func importSettings(_ sender: Any?) {
     let panel = NSOpenPanel()
-    panel.allowedContentTypes = [.json]
+    panel.allowedFileTypes = ["json"]
     panel.allowsMultipleSelection = false
     panel.beginSheetModal(for: view.window!) { [weak self] response in
       guard response == .OK, let url = panel.url else { return }
@@ -108,7 +108,7 @@ class PreferencesViewController: NSViewController {
       for entry in entries {
         let key = entry.inputSourceID.replacingOccurrences(of: ".", with: "-")
         if let keyCode = entry.keyCode, let flags = entry.modifierFlags {
-          let shortcut = MASShortcut(keyCode: UInt(keyCode), modifierFlags: UInt(flags))
+          let shortcut = MASShortcut(keyCode: keyCode, modifierFlags: NSEvent.ModifierFlags(rawValue: UInt(flags)))
           if let shortcutData = try? NSKeyedArchiver.archivedData(withRootObject: shortcut as Any, requiringSecureCoding: true) {
             UserDefaults.standard.set(shortcutData, forKey: key)
           }

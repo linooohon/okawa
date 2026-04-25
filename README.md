@@ -15,13 +15,13 @@ shortcuts UI.
 ### Using [Homebrew](https://brew.sh/)
 
 ```shell
-brew tap hmepas/kawa https://github.com/hmepas/kawa
-brew install --cask hmepas/kawa/kawa
+brew tap linooohon/okawa https://github.com/linooohon/okawa
+brew install --cask linooohon/okawa/kawa
 ```
 
 ### Manually
 
-The prebuilt binaries can be found in [Releases](https://github.com/utatti/kawa/releases).
+The prebuilt binaries can be found in [Releases](https://github.com/linooohon/okawa/releases).
 
 Unzip `Kawa.zip` and move `Kawa.app` to `Applications`.
 
@@ -42,6 +42,8 @@ command line:
 ```bash
 xcodebuild -resolvePackageDependencies
 xcodebuild -scheme kawa -configuration Debug
+# run tests:
+xcodebuild -scheme kawa -destination 'platform=macOS' test
 # release build:
 xcodebuild -scheme kawa -configuration Release -derivedDataPath build
 ```
@@ -49,7 +51,7 @@ xcodebuild -scheme kawa -configuration Release -derivedDataPath build
 ### Updating SPM dependencies
 
 `Package.resolved` is checked into the repository to ensure reproducible builds.
-To upgrade MASShortcut, update the version in `project.pbxproj`, then run:
+To upgrade MASShortcut, update the branch/version in `project.pbxproj`, then run:
 
 ```bash
 xcodebuild -resolvePackageDependencies
@@ -58,11 +60,20 @@ xcodebuild -resolvePackageDependencies
 Commit the updated `Package.resolved`.
 
 ## What's new in this fork
-- Swift 5 toolchain; MASShortcut now comes via Swift Package Manager (no Carthage).
-- Shortcut screen upgrades:
-  - Same shortcut can be assigned to multiple input sources; pressing it cycles through them.
-  - Input sources are draggable to change their cycling order.
-- Notifications use modern `UNUserNotificationCenter`.
+
+- Safe unwrap: all force-cast / force-unwrap removed; app no longer crashes on unexpected Carbon API returns.
+- First-launch fix: preferences window now correctly auto-opens on first launch.
+- Notifications: fixed identifier prevents stacking; temp icon files are cleaned up; thread-safe delivery.
+- Notification auth warning: if notification permission is denied, preferences shows a warning with a link to System Settings.
+- Shortcut conflict warning: NSAlert warns when a recorded shortcut conflicts with a system shortcut (e.g. Cmd+Space).
+- Menu bar abbreviation: status bar shows 2-char abbreviation of the current input source, updated in real time.
+- Launch at login: checkbox in preferences using `SMAppService` (macOS 13+).
+- Settings export/import: export shortcut configuration to JSON and import on another machine.
+- Shortcut cycling: same shortcut can be assigned to multiple input sources; pressing it cycles through them.
+- Drag-to-reorder: input sources are draggable to change their cycling order.
+- Modern notifications: uses `UNUserNotificationCenter`.
+- Swift 5 + SPM: MASShortcut via Swift Package Manager (no Carthage).
+- CI: GitHub Actions on macOS 15 (Apple Silicon).
 
 ## License
 

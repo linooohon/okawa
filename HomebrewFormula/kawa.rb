@@ -1,15 +1,15 @@
 # frozen_string_literal: true
 
 # Homebrew tap formula template for the Kawa fork.
-# To use it, create a tap repository (e.g. github.com/hmepas/homebrew-kawa or homebrew-tap)
+# To use it, create a tap repository (e.g. github.com/linooohon/homebrew-okawa)
 # with a `Formula` directory and drop this file in as `Formula/kawa.rb`.
 class Kawa < Formula
   desc "Menu bar input source switcher with custom shortcuts"
-  homepage "https://github.com/hmepas/kawa"
-  url "https://github.com/hmepas/kawa.git",
+  homepage "https://github.com/linooohon/okawa"
+  url "https://github.com/linooohon/okawa.git",
       :using => :git,
-      :revision => "4e4a4fab3f1f4d57ec0a45e1c718c2dab811bf98"
-  version "0.1.1"
+      :branch => "main"
+  version "1.1.0"
 
   depends_on :xcode => ["15.0", :build]
 
