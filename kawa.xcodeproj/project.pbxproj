@@ -27,6 +27,7 @@
 		AA000006AAAA000000000001 /* SettingsPorter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000006AAAA000000000002 /* SettingsPorter.swift */; };
 		AA000007AAAA000000000001 /* SettingsPorterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000007AAAA000000000002 /* SettingsPorterTests.swift */; };
 		AA000008AAAA000000000001 /* ShortcutManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000008AAAA000000000002 /* ShortcutManagerTests.swift */; };
+		AA000009AAAA000000000001 /* PermanentStorageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000009AAAA000000000002 /* PermanentStorageTests.swift */; };
 		AA000001AAAA000000000001 /* TISInputSourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000001AAAA000000000002 /* TISInputSourceTests.swift */; };
 		AA000002AAAA000000000001 /* NotificationManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000002AAAA000000000002 /* NotificationManagerTests.swift */; };
 		AA000004AAAA000000000001 /* InputSourceAbbreviationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000004AAAA000000000002 /* InputSourceAbbreviationTests.swift */; };
@@ -64,6 +65,7 @@
 		AA000006AAAA000000000002 /* SettingsPorter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPorter.swift; sourceTree = "<group>"; };
 		AA000007AAAA000000000002 /* SettingsPorterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPorterTests.swift; sourceTree = "<group>"; };
 		AA000008AAAA000000000002 /* ShortcutManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortcutManagerTests.swift; sourceTree = "<group>"; };
+		AA000009AAAA000000000002 /* PermanentStorageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermanentStorageTests.swift; sourceTree = "<group>"; };
 		EE92E8FC1F6CC98E00559B7C /* TISInputSource+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TISInputSource+Additions.swift"; sourceTree = "<group>"; };
 		AA000001AAAA000000000002 /* TISInputSourceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TISInputSourceTests.swift; sourceTree = "<group>"; };
 		AA000002AAAA000000000002 /* NotificationManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManagerTests.swift; sourceTree = "<group>"; };
@@ -150,6 +152,7 @@
 				AA000004AAAA000000000002 /* InputSourceAbbreviationTests.swift */,
 				AA000007AAAA000000000002 /* SettingsPorterTests.swift */,
 				AA000008AAAA000000000002 /* ShortcutManagerTests.swift */,
+				AA000009AAAA000000000002 /* PermanentStorageTests.swift */,
 			);
 			path = kawaTests;
 			sourceTree = "<group>";
@@ -302,6 +305,7 @@
 				AA000004AAAA000000000001 /* InputSourceAbbreviationTests.swift in Sources */,
 				AA000007AAAA000000000001 /* SettingsPorterTests.swift in Sources */,
 				AA000008AAAA000000000001 /* ShortcutManagerTests.swift in Sources */,
+				AA000009AAAA000000000001 /* PermanentStorageTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

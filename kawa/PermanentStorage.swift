@@ -1,9 +1,9 @@
 import Cocoa
 
 class PermanentStorage {
-  private static let defaults = UserDefaults.standard
+  static var defaults: UserDefaults = .standard
 
-  private enum StorageKey: String {
+  enum StorageKey: String {
     case showsNotification = "show-notification"
     case launchedForTheFirstTime = "launched-for-the-first-time"
     case inputSourceOrder = "input-source-order"
