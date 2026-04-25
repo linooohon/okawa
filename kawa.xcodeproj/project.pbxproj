@@ -25,6 +25,7 @@
 		AA000003AAAA000000000001 /* ShortcutConflictChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000003AAAA000000000002 /* ShortcutConflictChecker.swift */; };
 		AA000001AAAA000000000001 /* TISInputSourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000001AAAA000000000002 /* TISInputSourceTests.swift */; };
 		AA000002AAAA000000000001 /* NotificationManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000002AAAA000000000002 /* NotificationManagerTests.swift */; };
+		AA000004AAAA000000000001 /* InputSourceAbbreviationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000004AAAA000000000002 /* InputSourceAbbreviationTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,7 @@
 		EE92E8FC1F6CC98E00559B7C /* TISInputSource+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TISInputSource+Additions.swift"; sourceTree = "<group>"; };
 		AA000001AAAA000000000002 /* TISInputSourceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TISInputSourceTests.swift; sourceTree = "<group>"; };
 		AA000002AAAA000000000002 /* NotificationManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManagerTests.swift; sourceTree = "<group>"; };
+		AA000004AAAA000000000002 /* InputSourceAbbreviationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputSourceAbbreviationTests.swift; sourceTree = "<group>"; };
 		AA000001AAAA000000000003 /* kawaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = kawaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -135,6 +137,7 @@
 			children = (
 				AA000001AAAA000000000002 /* TISInputSourceTests.swift */,
 				AA000002AAAA000000000002 /* NotificationManagerTests.swift */,
+				AA000004AAAA000000000002 /* InputSourceAbbreviationTests.swift */,
 			);
 			path = kawaTests;
 			sourceTree = "<group>";
@@ -282,6 +285,7 @@
 			files = (
 				AA000001AAAA000000000001 /* TISInputSourceTests.swift in Sources */,
 				AA000002AAAA000000000001 /* NotificationManagerTests.swift in Sources */,
+				AA000004AAAA000000000001 /* InputSourceAbbreviationTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

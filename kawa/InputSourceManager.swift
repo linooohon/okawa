@@ -79,6 +79,11 @@ extension InputSource {
     guard let current = TISCopyCurrentKeyboardInputSource()?.takeRetainedValue() else { return nil }
     return InputSource(tisInputSource: current)
   }
+
+  static func abbreviation(for name: String) -> String {
+    guard !name.isEmpty else { return "?" }
+    return String(name.prefix(2))
+  }
 }
 
 private extension URL {
