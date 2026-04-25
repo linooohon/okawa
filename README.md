@@ -46,6 +46,17 @@ xcodebuild -scheme kawa -configuration Debug
 xcodebuild -scheme kawa -configuration Release -derivedDataPath build
 ```
 
+### Updating SPM dependencies
+
+`Package.resolved` is checked into the repository to ensure reproducible builds.
+To upgrade MASShortcut, update the version in `project.pbxproj`, then run:
+
+```bash
+xcodebuild -resolvePackageDependencies
+```
+
+Commit the updated `Package.resolved`.
+
 ## What's new in this fork
 - Swift 5 toolchain; MASShortcut now comes via Swift Package Manager (no Carthage).
 - Shortcut screen upgrades:
