@@ -1,27 +1,27 @@
 # Homebrew tap packaging
 
-Этот каталог — заготовка для собственного tap-а. Шаги:
+This directory contains templates for a Homebrew tap. Steps:
 
-1) Создай репозиторий `homebrew-kawa` или `homebrew-tap` (одно на аккаунт).
-2) Внутри репозитория создай папку `Formula/` и положи туда `kawa.rb` из этого каталога.
-3) (Опционально для бинарной установки) Создай папку `Casks/` и добавь cask, указывающий на release-asset `Kawa.zip` (см. GitHub Actions ниже).
-4) Запушь репозиторий. Подключение пользователем:
+1) Create a repository `homebrew-okawa` or `homebrew-tap` (one per account).
+2) Inside the repo create a `Formula/` directory and place `okawa.rb` from this directory.
+3) (Optional for binary install) Create a `Casks/` directory and add a cask pointing to the release asset `okawa.zip` (see GitHub Actions below).
+4) Push the repository. Users can then install:
    ```bash
-   brew tap hmepas/kawa   # или hmepas/tap
-   brew install hmepas/kawa/kawa        # формула из исходников
-   brew install --cask hmepas/kawa/kawa # готовый .app из релиза
+   brew tap linooohon/okawa   # or linooohon/tap
+   brew install linooohon/okawa/okawa        # formula from source
+   brew install --cask linooohon/okawa/okawa # prebuilt .app from release
    ```
 
-Если tap живет прямо в этом репозитории (не в `homebrew-kawa`), подключай с URL:
+If the tap lives in this repository (not in a separate `homebrew-okawa`), connect with URL:
 ```bash
-brew tap hmepas/kawa https://github.com/hmepas/kawa
+brew tap linooohon/okawa https://github.com/linooohon/okawa
 ```
 
-## Release-пайплайн
+## Release pipeline
 
-В корне проекта добавлен workflow `.github/workflows/release.yml`, который на теги собирает `Kawa.app` в Release и прикладывает `Kawa.zip` к GitHub Release. Это пригодится для cask-а (установка без Xcode).
+The workflow `.github/workflows/release.yml` builds `okawa.app` on tag push and attaches `okawa.zip` to the GitHub Release. This is used by the cask (install without Xcode).
 
-## Настройки формулы
+## Formula settings
 
-- Формула `kawa.rb` сейчас фиксирована на ревизию `26055ed…` и версию `0.0.1`. При выпуске тега обнови `version`, `revision` и/или переведи на tarball релиза.
-- Для cask-а используй URL вида `https://github.com/hmepas/kawa/releases/download/v0.0.1/Kawa.zip` и пропиши `sha256` из CI артефакта.
+- The formula `okawa.rb` currently tracks the `main` branch. When releasing a tag, update `version` and/or switch to a tarball release URL.
+- For the cask, use a URL like `https://github.com/linooohon/okawa/releases/download/v1.1.0/okawa.zip` and set `sha256` from the CI artifact.
