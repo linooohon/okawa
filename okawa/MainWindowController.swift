@@ -11,6 +11,7 @@ class MainWindowController: NSWindowController, NSWindowDelegate {
 
   func showAndActivate(_ sender: AnyObject?) {
     self.window?.collectionBehavior = [.moveToActiveSpace]
+    self.window?.level = .floating
     self.showWindow(sender)
     self.window?.makeKeyAndOrderFront(sender)
     if #available(macOS 14.0, *) {
@@ -21,6 +22,7 @@ class MainWindowController: NSWindowController, NSWindowDelegate {
   }
 
   func windowWillClose(_ notification: Notification) {
+    self.window?.level = .normal
     deactivate()
   }
 
