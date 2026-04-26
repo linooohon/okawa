@@ -343,8 +343,8 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/shpakovski/MASShortcut.git";
 			requirement = {
-				branch = master;
-				kind = branch;
+				kind = revision;
+				revision = 6f2603c6b6cc18f64a799e5d2c9d3bbc467c413a;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
