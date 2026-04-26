@@ -8,7 +8,6 @@ A lightweight macOS menu bar app that lets you switch input sources with custom 
 - Assign the same shortcut to multiple input sources to cycle through them
 - Drag-and-drop to reorder cycling order
 - Menu bar shows current input source abbreviation (e.g. `En`, `注音`)
-- Desktop notification on input source switch (optional)
 - Export/import shortcut settings as JSON
 - Launch at login
 - Warns when a shortcut conflicts with system shortcuts (e.g. Cmd+Space)
@@ -68,7 +67,6 @@ Click the menu bar item to open Preferences.
 
 ### 5. Preferences
 
-- **Show notification on input source change** - displays a desktop notification with the input source name and icon when you switch
 - **Launch at login** - start okawa automatically when you log in (macOS 13+)
 - **Quit okawa** - stops the app and removes the menu bar item
 

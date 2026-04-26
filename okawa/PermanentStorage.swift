@@ -4,7 +4,6 @@ class PermanentStorage {
   static var defaults: UserDefaults = .standard
 
   enum StorageKey: String {
-    case showsNotification = "show-notification"
     case launchedForTheFirstTime = "launched-for-the-first-time"
     case inputSourceOrder = "input-source-order"
   }
@@ -15,15 +14,6 @@ class PermanentStorage {
 
   private static func set(_ value: Bool, forKey key: StorageKey) {
     defaults.set(value, forKey: key.rawValue)
-  }
-
-  static var showsNotification: Bool {
-    get {
-      return bool(forKey: .showsNotification, default: false)
-    }
-    set {
-      set(newValue, forKey: .showsNotification)
-    }
   }
 
   static var launchedForTheFirstTime: Bool {

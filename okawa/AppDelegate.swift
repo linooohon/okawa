@@ -9,9 +9,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
   func applicationDidFinishLaunching(_ aNotification: Notification) {
     promptAccessibilityIfNeeded()
 
-    if PermanentStorage.showsNotification {
-      NotificationManager.requestAuthorizationIfNeeded { _ in }
-    }
   }
 
   func applicationDidBecomeActive(_ notification: Notification) {
@@ -50,10 +47,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
       }
     }
-  }
-
-  func applicationWillTerminate(_ aNotification: Notification) {
-    NotificationManager.cleanUpTemporaryIcons()
   }
 
   @IBAction func showPreferences(_ sender: AnyObject? = nil) {

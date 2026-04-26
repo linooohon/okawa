@@ -62,10 +62,6 @@ class ShortcutManager {
     guard let next = ShortcutManager.nextSource(after: InputSource.current?.id, within: sources) else { return }
 
     next.select()
-
-    if PermanentStorage.showsNotification {
-      NotificationManager.deliver(next.name, icon: next.icon)
-    }
   }
 
   private func shortcutDefaultsKey(for source: InputSource) -> String? {

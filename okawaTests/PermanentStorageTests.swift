@@ -23,20 +23,6 @@ class PermanentStorageTests: XCTestCase {
     super.tearDown()
   }
 
-  // T-01: fresh defaults, showsNotification default
-  func testShowsNotificationDefaultIsFalse() {
-    XCTAssertFalse(PermanentStorage.showsNotification)
-  }
-
-  // T-02: write showsNotification = true, read back
-  func testShowsNotificationWriteRead() {
-    PermanentStorage.showsNotification = true
-    XCTAssertTrue(PermanentStorage.showsNotification)
-
-    PermanentStorage.showsNotification = false
-    XCTAssertFalse(PermanentStorage.showsNotification)
-  }
-
   // T-03: fresh defaults, launchedForTheFirstTime default
   func testLaunchedForTheFirstTimeDefaultIsTrue() {
     XCTAssertTrue(PermanentStorage.launchedForTheFirstTime)

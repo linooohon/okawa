@@ -17,7 +17,6 @@
 		CC6D8ED21B654099005682C0 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CC6D8ED11B654099005682C0 /* Images.xcassets */; };
 		CC6D8ED51B654099005682C0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC6D8ED31B654099005682C0 /* Main.storyboard */; };
 		CC6D8EEB1B654143005682C0 /* InputSourceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC6D8EEA1B654143005682C0 /* InputSourceManager.swift */; };
-		CCB5F9A52C3A1B3E00D43F0A /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB5F9A42C3A1B3E00D43F0A /* NotificationManager.swift */; };
 		CCF87D132C3A3AF100C181C4 /* ShortcutManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF87D122C3A3AF100C181C4 /* ShortcutManager.swift */; };
 		CCCE7CF12C3A469D00A3F9A4 /* AlwaysAllowShortcutValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCE7CF02C3A469D00A3F9A4 /* AlwaysAllowShortcutValidator.swift */; };
 		CCB5F9B62C3A2A8D00D43F0A /* MASShortcut in Frameworks */ = {isa = PBXBuildFile; productRef = CCB5F9B72C3A2A8D00D43F0A /* MASShortcut */; };
@@ -30,7 +29,6 @@
 		AA000008AAAA000000000001 /* ShortcutManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000008AAAA000000000002 /* ShortcutManagerTests.swift */; };
 		AA000009AAAA000000000001 /* PermanentStorageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000009AAAA000000000002 /* PermanentStorageTests.swift */; };
 		AA000001AAAA000000000001 /* TISInputSourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000001AAAA000000000002 /* TISInputSourceTests.swift */; };
-		AA000002AAAA000000000001 /* NotificationManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000002AAAA000000000002 /* NotificationManagerTests.swift */; };
 		AA000004AAAA000000000001 /* InputSourceAbbreviationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000004AAAA000000000002 /* InputSourceAbbreviationTests.swift */; };
 		BB000001AAAA000000000001 /* InputSourceOrderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB000001AAAA000000000002 /* InputSourceOrderTests.swift */; };
 		BB000002AAAA000000000001 /* LoginItemManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB000002AAAA000000000002 /* LoginItemManagerTests.swift */; };
@@ -62,7 +60,6 @@
 		CC6D8ED11B654099005682C0 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		CC6D8EEA1B654143005682C0 /* InputSourceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputSourceManager.swift; sourceTree = "<group>"; };
 		DE8850D624B633EC002964E4 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/Main.storyboard; sourceTree = "<group>"; };
-		CCB5F9A42C3A1B3E00D43F0A /* NotificationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 		CCF87D122C3A3AF100C181C4 /* ShortcutManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortcutManager.swift; sourceTree = "<group>"; };
 		CCCE7CF02C3A469D00A3F9A4 /* AlwaysAllowShortcutValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlwaysAllowShortcutValidator.swift; sourceTree = "<group>"; };
 		AA000003AAAA000000000002 /* ShortcutConflictChecker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortcutConflictChecker.swift; sourceTree = "<group>"; };
@@ -74,7 +71,6 @@
 		AA000009AAAA000000000002 /* PermanentStorageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermanentStorageTests.swift; sourceTree = "<group>"; };
 		EE92E8FC1F6CC98E00559B7C /* TISInputSource+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TISInputSource+Additions.swift"; sourceTree = "<group>"; };
 		AA000001AAAA000000000002 /* TISInputSourceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TISInputSourceTests.swift; sourceTree = "<group>"; };
-		AA000002AAAA000000000002 /* NotificationManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManagerTests.swift; sourceTree = "<group>"; };
 		AA000004AAAA000000000002 /* InputSourceAbbreviationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputSourceAbbreviationTests.swift; sourceTree = "<group>"; };
 		BB000001AAAA000000000002 /* InputSourceOrderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputSourceOrderTests.swift; sourceTree = "<group>"; };
 		BB000002AAAA000000000002 /* LoginItemManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginItemManagerTests.swift; sourceTree = "<group>"; };
@@ -131,8 +127,7 @@
 				CC1FEF6E1B685FD3005E9BC8 /* ShortcutCellView.swift */,
 				CC6D8EEA1B654143005682C0 /* InputSourceManager.swift */,
 				CCF87D122C3A3AF100C181C4 /* ShortcutManager.swift */,
-				CCB5F9A42C3A1B3E00D43F0A /* NotificationManager.swift */,
-				CCCE7CF02C3A469D00A3F9A4 /* AlwaysAllowShortcutValidator.swift */,
+					CCCE7CF02C3A469D00A3F9A4 /* AlwaysAllowShortcutValidator.swift */,
 				AA000003AAAA000000000002 /* ShortcutConflictChecker.swift */,
 				AA000005AAAA000000000002 /* LoginItemManager.swift */,
 				AA000006AAAA000000000002 /* SettingsPorter.swift */,
@@ -159,8 +154,7 @@
 			isa = PBXGroup;
 			children = (
 				AA000001AAAA000000000002 /* TISInputSourceTests.swift */,
-				AA000002AAAA000000000002 /* NotificationManagerTests.swift */,
-				AA000004AAAA000000000002 /* InputSourceAbbreviationTests.swift */,
+					AA000004AAAA000000000002 /* InputSourceAbbreviationTests.swift */,
 				AA000007AAAA000000000002 /* SettingsPorterTests.swift */,
 				AA000008AAAA000000000002 /* ShortcutManagerTests.swift */,
 				AA000009AAAA000000000002 /* PermanentStorageTests.swift */,
@@ -301,8 +295,7 @@
 				CC4065BE1B6D334B000E1E87 /* PermanentStorage.swift in Sources */,
 				CC6D8EEB1B654143005682C0 /* InputSourceManager.swift in Sources */,
 				CCF87D132C3A3AF100C181C4 /* ShortcutManager.swift in Sources */,
-				CCB5F9A52C3A1B3E00D43F0A /* NotificationManager.swift in Sources */,
-				CCCE7CF12C3A469D00A3F9A4 /* AlwaysAllowShortcutValidator.swift in Sources */,
+					CCCE7CF12C3A469D00A3F9A4 /* AlwaysAllowShortcutValidator.swift in Sources */,
 				AA000003AAAA000000000001 /* ShortcutConflictChecker.swift in Sources */,
 				AA000005AAAA000000000001 /* LoginItemManager.swift in Sources */,
 				AA000006AAAA000000000001 /* SettingsPorter.swift in Sources */,
@@ -317,8 +310,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA000001AAAA000000000001 /* TISInputSourceTests.swift in Sources */,
-				AA000002AAAA000000000001 /* NotificationManagerTests.swift in Sources */,
-				AA000004AAAA000000000001 /* InputSourceAbbreviationTests.swift in Sources */,
+					AA000004AAAA000000000001 /* InputSourceAbbreviationTests.swift in Sources */,
 				AA000007AAAA000000000001 /* SettingsPorterTests.swift in Sources */,
 				AA000008AAAA000000000001 /* ShortcutManagerTests.swift in Sources */,
 				AA000009AAAA000000000001 /* PermanentStorageTests.swift in Sources */,

@@ -147,17 +147,6 @@
                                     <rect key="frame" x="3" y="3" width="410" height="123"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ix0-UJ-v3V">
-                                            <rect key="frame" x="14" y="98" width="382" height="18"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                            <buttonCell key="cell" type="check" title="Show notification on input source change" bezelStyle="regularSquare" imagePosition="left" inset="2" id="qfa-bZ-zps">
-                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                                <font key="font" metaFont="system"/>
-                                            </buttonCell>
-                                            <connections>
-                                                <action selector="showNotification:" target="8tD-vA-uhk" id="mcp-CO-SfQ"/>
-                                            </connections>
-                                        </button>
                                         <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LAL-cb-001">
                                             <rect key="frame" x="14" y="74" width="382" height="18"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
@@ -186,7 +175,6 @@
                         </subviews>
                     </view>
                     <connections>
-                        <outlet property="showNotificationCheckbox" destination="Ix0-UJ-v3V" id="HxT-bb-QrP"/>
                         <outlet property="launchAtLoginCheckbox" destination="LAL-cb-001" id="LAL-ol-004"/>
                     </connections>
                 </viewController>

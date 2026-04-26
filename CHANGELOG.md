@@ -2,6 +2,7 @@
 
 * Fix: move preferences window to active Space on open
 * Fix: bring preferences window to front on open, reset level on close
+* Remove: notification feature (requires Apple Developer ID signing, not functional in unsigned builds)
 
 ## 1.2.0 (26 Apr 2026)
 
