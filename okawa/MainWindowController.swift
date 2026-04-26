@@ -10,6 +10,7 @@ class MainWindowController: NSWindowController, NSWindowDelegate {
   }()
 
   func showAndActivate(_ sender: AnyObject?) {
+    self.window?.collectionBehavior = [.moveToActiveSpace]
     self.showWindow(sender)
     self.window?.makeKeyAndOrderFront(sender)
     if #available(macOS 14.0, *) {
