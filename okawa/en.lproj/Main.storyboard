@@ -158,6 +158,17 @@
                                                 <action selector="showNotification:" target="8tD-vA-uhk" id="mcp-CO-SfQ"/>
                                             </connections>
                                         </button>
+                                        <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LAL-cb-001">
+                                            <rect key="frame" x="14" y="74" width="382" height="18"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <buttonCell key="cell" type="check" title="Launch at login" bezelStyle="regularSquare" imagePosition="left" inset="2" id="LAL-cb-002">
+                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <action selector="toggleLaunchAtLogin:" target="8tD-vA-uhk" id="LAL-ac-003"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
                                 </view>
                             </box>
@@ -176,6 +187,7 @@
                     </view>
                     <connections>
                         <outlet property="showNotificationCheckbox" destination="Ix0-UJ-v3V" id="HxT-bb-QrP"/>
+                        <outlet property="launchAtLoginCheckbox" destination="LAL-cb-001" id="LAL-ol-004"/>
                     </connections>
                 </viewController>
                 <customObject id="YAB-W8-ond" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
