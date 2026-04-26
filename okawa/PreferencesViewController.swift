@@ -91,7 +91,7 @@ class PreferencesViewController: NSViewController {
       label.leadingAnchor.constraint(equalTo: showNotificationCheckbox.leadingAnchor),
       label.topAnchor.constraint(equalTo: showNotificationCheckbox.bottomAnchor, constant: 4),
       button.leadingAnchor.constraint(equalTo: label.trailingAnchor, constant: 8),
-      button.centerYAnchor.constraint(equalTo: label.centerYAnchor),
+      button.centerYAnchor.constraint(equalTo: label.centerYAnchor)
     ])
   }
 
@@ -132,12 +132,12 @@ class PreferencesViewController: NSViewController {
 
 private extension Bool {
   var stateValue: NSControl.StateValue {
-    return self ? .on : .off;
+    return self ? .on : .off
   }
 }
 
 private extension NSControl.StateValue {
   var boolValue: Bool {
-    return self == .on;
+    return self == .on
   }
 }
