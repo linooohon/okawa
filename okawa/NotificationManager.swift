@@ -32,8 +32,10 @@ enum NotificationManager {
         let content = UNMutableNotificationContent()
         content.body = message
 
+        var currentIconURL: URL?
         if let image = icon, let attachment = createAttachment(from: image) {
           content.attachments = [attachment]
+          currentIconURL = attachment.url
         }
 
         let request = UNNotificationRequest(
@@ -43,7 +45,7 @@ enum NotificationManager {
         )
 
         UNUserNotificationCenter.current().add(request) { _ in
-          cleanUpTemporaryIcons()
+          cleanUpTemporaryIcons(excluding: currentIconURL)
         }
       }
     }
@@ -55,14 +57,16 @@ enum NotificationManager {
     }
   }
 
-  static func cleanUpTemporaryIcons() {
+  static func cleanUpTemporaryIcons(excluding currentURL: URL? = nil) {
     let tmpDir = FileManager.default.temporaryDirectory
     guard let contents = try? FileManager.default.contentsOfDirectory(
       at: tmpDir, includingPropertiesForKeys: nil
     ) else { return }
 
+    let currentFilename = currentURL?.lastPathComponent
     for url in contents where url.lastPathComponent.hasPrefix(iconFilePrefix)
-      && url.pathExtension == "png" {
+      && url.pathExtension == "png"
+      && url.lastPathComponent != currentFilename {
       try? FileManager.default.removeItem(at: url)
     }
   }
