@@ -1,6 +1,6 @@
 import Cocoa
 
-@NSApplicationMain
+@main
 class AppDelegate: NSObject, NSApplicationDelegate {
   let statusBar = StatusBar.shared
 
