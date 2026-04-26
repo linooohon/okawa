@@ -1,5 +1,5 @@
 import XCTest
-@testable import Kawa
+@testable import okawa
 
 class ShortcutManagerTests: XCTestCase {
 

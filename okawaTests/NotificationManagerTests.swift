@@ -1,14 +1,14 @@
 import XCTest
-@testable import Kawa
+@testable import okawa
 
 class NotificationManagerTests: XCTestCase {
 
   // MARK: - cleanUpTemporaryIcons
 
-  func testCleanUpRemovesKawaIconFiles() {
+  func testCleanUpRemovesOkawaIconFiles() {
     let tmpDir = FileManager.default.temporaryDirectory
-    let file1 = tmpDir.appendingPathComponent("kawa-icon-aaa.png")
-    let file2 = tmpDir.appendingPathComponent("kawa-icon-bbb.png")
+    let file1 = tmpDir.appendingPathComponent("okawa-icon-aaa.png")
+    let file2 = tmpDir.appendingPathComponent("okawa-icon-bbb.png")
 
     FileManager.default.createFile(atPath: file1.path, contents: Data([0x89]))
     FileManager.default.createFile(atPath: file2.path, contents: Data([0x89]))

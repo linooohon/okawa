@@ -1,9 +1,9 @@
 import XCTest
-@testable import Kawa
+@testable import okawa
 
 class PermanentStorageTests: XCTestCase {
 
-  private let suiteName = "kawa.test.\(UUID().uuidString)"
+  private let suiteName = "okawa.test.\(UUID().uuidString)"
   private var originalDefaults: UserDefaults!
 
   override func setUp() {
