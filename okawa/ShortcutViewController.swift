@@ -3,6 +3,7 @@ import Cocoa
 class ShortcutViewController: NSViewController, NSTableViewDataSource, NSTableViewDelegate {
   @IBOutlet weak var tableView: NSTableView?
 
+  var shortcutManager: ShortcutManager = .shared
   private var inputSources: [InputSource] = []
 
   override func viewDidLoad() {
@@ -23,7 +24,7 @@ class ShortcutViewController: NSViewController, NSTableViewDataSource, NSTableVi
 
   func reloadInputSources() {
     inputSources = InputSource.orderedSources(using: PermanentStorage.inputSourceOrder)
-    ShortcutManager.shared.rebuildBindings(with: inputSources)
+    shortcutManager.rebuildBindings(with: inputSources)
     tableView?.reloadData()
   }
 
@@ -83,7 +84,7 @@ class ShortcutViewController: NSViewController, NSTableViewDataSource, NSTableVi
 
     inputSources = updated
     PermanentStorage.inputSourceOrder = updated.map { $0.id }
-    ShortcutManager.shared.rebuildBindings(with: updated)
+    shortcutManager.rebuildBindings(with: updated)
     tableView.reloadData()
     return true
   }
