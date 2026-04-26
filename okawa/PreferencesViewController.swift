@@ -55,7 +55,7 @@ class PreferencesViewController: NSViewController {
   @IBAction func exportSettings(_ sender: Any?) {
     let sources = InputSource.orderedSources(using: PermanentStorage.inputSourceOrder)
     let shortcuts: [(id: String, keyCode: Int?, modifierFlags: Int?)] = sources.map { source in
-      let key = source.id.replacingOccurrences(of: ".", with: "-")
+      let key = source.defaultsKey
       if let data = UserDefaults.standard.data(forKey: key),
          let shortcut = try? NSKeyedUnarchiver.unarchivedObject(ofClass: MASShortcut.self, from: data) {
         return (id: source.id, keyCode: Int(shortcut.keyCode), modifierFlags: Int(shortcut.modifierFlags.rawValue))
@@ -106,7 +106,7 @@ class PreferencesViewController: NSViewController {
       }
 
       for entry in entries {
-        let key = entry.inputSourceID.replacingOccurrences(of: ".", with: "-")
+        let key = InputSource.defaultsKey(for: entry.inputSourceID)
         if let keyCode = entry.keyCode, let flags = entry.modifierFlags {
           let shortcut = MASShortcut(keyCode: keyCode, modifierFlags: NSEvent.ModifierFlags(rawValue: UInt(flags)))
           if let shortcutData = try? NSKeyedArchiver.archivedData(withRootObject: shortcut as Any, requiringSecureCoding: true) {

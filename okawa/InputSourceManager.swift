@@ -80,6 +80,14 @@ extension InputSource {
     return InputSource(tisInputSource: current)
   }
 
+  static func defaultsKey(for inputSourceID: String) -> String {
+    return inputSourceID.replacingOccurrences(of: ".", with: "-")
+  }
+
+  var defaultsKey: String {
+    return InputSource.defaultsKey(for: id)
+  }
+
   static func abbreviation(for name: String) -> String {
     guard !name.isEmpty else { return "?" }
     return String(name.prefix(2))
