@@ -131,8 +131,8 @@ Commit the updated `Package.resolved`.
 Push a `v*` tag to trigger the CI release workflow:
 
 ```bash
-git tag v1.2.1
-git push origin v1.2.1
+git tag v1.2.2
+git push origin v1.2.2
 ```
 
 GitHub Actions will build the app on macOS 15 (Apple Silicon) and attach `okawa.zip` to the GitHub Release. After the release, update `Casks/okawa.rb` with the sha256 of the zip:
