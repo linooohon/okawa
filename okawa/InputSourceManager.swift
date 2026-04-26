@@ -70,7 +70,8 @@ extension InputSource {
   static func orderedSources(using order: [String]) -> [InputSource] {
     let allSources = sources
     var ordered: [InputSource] = []
-    var remaining = Dictionary(uniqueKeysWithValues: allSources.map { ($0.id, $0) })
+    // Use reduce to handle potential duplicate IDs (last one wins)
+    var remaining = allSources.reduce(into: [String: InputSource]()) { $0[$1.id] = $1 }
 
     for id in order {
       if let source = remaining.removeValue(forKey: id) {
