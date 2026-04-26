@@ -17,6 +17,7 @@ A lightweight macOS menu bar app that lets you switch input sources with custom 
 
 - macOS 10.15 (Catalina) or later
 - Accessibility permission (required for switching input sources)
+- Launch at Login requires macOS 13 (Ventura) or later
 
 ## Install
 
