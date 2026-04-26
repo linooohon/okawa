@@ -11,24 +11,14 @@ class LoginItemManager: LoginItemManaging {
   static let shared = LoginItemManager()
 
   var isEnabled: Bool {
-    if #available(macOS 13.0, *) {
-      return SMAppService.mainApp.status == .enabled
-    } else {
-      return PermanentStorage.launchAtLogin
-    }
+    return SMAppService.mainApp.status == .enabled
   }
 
   func enable() throws {
-    if #available(macOS 13.0, *) {
-      try SMAppService.mainApp.register()
-    }
-    PermanentStorage.launchAtLogin = true
+    try SMAppService.mainApp.register()
   }
 
   func disable() throws {
-    if #available(macOS 13.0, *) {
-      try SMAppService.mainApp.unregister()
-    }
-    PermanentStorage.launchAtLogin = false
+    try SMAppService.mainApp.unregister()
   }
 }
