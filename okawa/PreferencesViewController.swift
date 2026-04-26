@@ -1,6 +1,10 @@
 import Cocoa
 import UserNotifications
 
+extension Notification.Name {
+  static let settingsDidImport = Notification.Name("okawa.settingsDidImport")
+}
+
 class PreferencesViewController: NSViewController {
   @IBOutlet weak var showNotificationCheckbox: NSButton!
   @IBOutlet weak var launchAtLoginCheckbox: NSButton!
@@ -117,10 +121,8 @@ class PreferencesViewController: NSViewController {
         }
       }
 
-      // Reload the shortcut view controller
-      if let shortcutVC = children.compactMap({ $0 as? ShortcutViewController }).first {
-        shortcutVC.reloadInputSources()
-      }
+      // Notify sibling controllers to reload
+      NotificationCenter.default.post(name: .settingsDidImport, object: nil)
     } catch {
       let alert = NSAlert()
       alert.messageText = "Import Failed"

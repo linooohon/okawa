@@ -10,6 +10,15 @@ class ShortcutViewController: NSViewController, NSTableViewDataSource, NSTableVi
     tableView?.registerForDraggedTypes([.string])
     tableView?.setDraggingSourceOperationMask(.move, forLocal: true)
     reloadInputSources()
+
+    NotificationCenter.default.addObserver(
+      self, selector: #selector(handleSettingsImport),
+      name: .settingsDidImport, object: nil
+    )
+  }
+
+  @objc private func handleSettingsImport() {
+    reloadInputSources()
   }
 
   func reloadInputSources() {
