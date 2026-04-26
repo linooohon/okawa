@@ -3,21 +3,23 @@ import XCTest
 
 class PermanentStorageTests: XCTestCase {
 
-  private let suiteName = "okawa.test.\(UUID().uuidString)"
+  private static let suiteName = "net.noraesae.okawa.tests"
   private var originalDefaults: UserDefaults!
+  private var testDefaults: UserDefaults!
 
   override func setUp() {
     super.setUp()
     originalDefaults = PermanentStorage.defaults
-    let testDefaults = UserDefaults(suiteName: suiteName)!
-    // Clear the suite
-    testDefaults.removePersistentDomain(forName: suiteName)
+    testDefaults = UserDefaults(suiteName: Self.suiteName)!
+    testDefaults.removePersistentDomain(forName: Self.suiteName)
     PermanentStorage.defaults = testDefaults
   }
 
   override func tearDown() {
     PermanentStorage.defaults = originalDefaults
-    UserDefaults.standard.removePersistentDomain(forName: suiteName)
+    testDefaults.removePersistentDomain(forName: Self.suiteName)
+    testDefaults.synchronize()
+    testDefaults = nil
     super.tearDown()
   }
 
