@@ -1,3 +1,8 @@
+## 1.2.1 (27 Apr 2026)
+
+* Fix: move preferences window to active Space on open
+* Fix: bring preferences window to front on open, reset level on close
+
 ## 1.2.0 (26 Apr 2026)
 
 * Refactor: extract import/export logic into SettingsFileHandler

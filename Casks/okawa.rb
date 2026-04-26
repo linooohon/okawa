@@ -1,5 +1,5 @@
 cask "okawa" do
-  version "1.2.0"
+  version "1.2.1"
   # TODO: Replace with actual sha256 after first release build.
   # Run: shasum -a 256 okawa.zip
   sha256 :no_check
