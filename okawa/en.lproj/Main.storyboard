@@ -11,9 +11,9 @@
                 <application id="hnw-xV-0zn" sceneMemberID="viewController">
                     <menu key="mainMenu" title="Main Menu" systemMenu="main" id="AYu-sK-qS6">
                         <items>
-                            <menuItem title="kawa" id="1Xt-HY-uBw">
+                            <menuItem title="okawa" id="1Xt-HY-uBw">
                                 <modifierMask key="keyEquivalentModifierMask"/>
-                                <menu key="submenu" title="kawa" systemMenu="apple" id="uQy-DD-JDr">
+                                <menu key="submenu" title="okawa" systemMenu="apple" id="uQy-DD-JDr">
                                     <items>
                                         <menuItem title="About kawa" state="on" id="5kV-Vb-QxS">
                                             <modifierMask key="keyEquivalentModifierMask"/>
@@ -38,7 +38,7 @@
                                             <menu key="submenu" title="Services" systemMenu="services" id="hz9-B4-Xy5"/>
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="4je-JR-u6R"/>
-                                        <menuItem title="Hide kawa" keyEquivalent="h" id="Olw-nP-bQN">
+                                        <menuItem title="Hide okawa" keyEquivalent="h" id="Olw-nP-bQN">
                                             <connections>
                                                 <action selector="hide:" target="Ady-hI-5gd" id="PnN-Uc-m68"/>
                                             </connections>
@@ -56,7 +56,7 @@
                                             </connections>
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="kCx-OE-vgT"/>
-                                        <menuItem title="Quit kawa" keyEquivalent="q" id="4sb-4s-VLi">
+                                        <menuItem title="Quit okawa" keyEquivalent="q" id="4sb-4s-VLi">
                                             <connections>
                                                 <action selector="terminate:" target="Ady-hI-5gd" id="Te7-pn-YzF"/>
                                             </connections>
@@ -68,7 +68,7 @@
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <menu key="submenu" title="Help" systemMenu="help" id="F2S-fz-NVQ">
                                     <items>
-                                        <menuItem title="kawa Help" keyEquivalent="?" id="FKE-Sm-Kum">
+                                        <menuItem title="okawa Help" keyEquivalent="?" id="FKE-Sm-Kum">
                                             <connections>
                                                 <action selector="showHelp:" target="Ady-hI-5gd" id="y7X-2Q-9no"/>
                                             </connections>
@@ -82,7 +82,7 @@
                         <outlet property="delegate" destination="Voe-Tx-rLC" id="PrD-fu-P6m"/>
                     </connections>
                 </application>
-                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="Kawa" customModuleProvider="target"/>
+                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="okawa" customModuleProvider="target"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-118" y="-148"/>
@@ -90,8 +90,8 @@
         <!--Window Controller-->
         <scene sceneID="FYq-vW-QWk">
             <objects>
-                <windowController storyboardIdentifier="MainWindow" id="2BU-NJ-sy0" customClass="MainWindowController" customModule="Kawa" customModuleProvider="target" sceneMemberID="viewController">
-                    <window key="window" title="Kawa" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="gw6-0r-b0T">
+                <windowController storyboardIdentifier="MainWindow" id="2BU-NJ-sy0" customClass="MainWindowController" customModule="okawa" customModuleProvider="target" sceneMemberID="viewController">
+                    <window key="window" title="okawa" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="gw6-0r-b0T">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES"/>
                         <rect key="contentRect" x="163" y="199" width="480" height="270"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1280" height="777"/>
@@ -135,7 +135,7 @@
         <!--Preferences View Controller-->
         <scene sceneID="rYs-if-gnG">
             <objects>
-                <viewController id="8tD-vA-uhk" customClass="PreferencesViewController" customModule="Kawa" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="8tD-vA-uhk" customClass="PreferencesViewController" customModule="okawa" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" id="hjE-TV-MvY">
                         <rect key="frame" x="0.0" y="0.0" width="450" height="299"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -164,7 +164,7 @@
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="13u-Dv-ipW">
                                 <rect key="frame" x="20.5" y="15" width="102" height="25"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="roundTextured" title="Quit Kawa" bezelStyle="texturedRounded" alignment="center" borderStyle="border" inset="2" id="sIC-mE-B6u">
+                                <buttonCell key="cell" type="roundTextured" title="Quit okawa" bezelStyle="texturedRounded" alignment="center" borderStyle="border" inset="2" id="sIC-mE-B6u">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
@@ -185,7 +185,7 @@
         <!--Shortcut View Controller-->
         <scene sceneID="lOC-jq-WBP">
             <objects>
-                <viewController id="WK9-v7-Mix" customClass="ShortcutViewController" customModule="Kawa" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="WK9-v7-Mix" customClass="ShortcutViewController" customModule="okawa" customModuleProvider="target" sceneMemberID="viewController">
                     <scrollView key="view" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" autohidesScrollers="YES" horizontalLineScroll="22" horizontalPageScroll="10" verticalLineScroll="22" verticalPageScroll="10" usesPredominantAxisScrolling="NO" id="jSm-gI-Qdt">
                         <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
@@ -193,7 +193,7 @@
                             <rect key="frame" x="1" y="0.0" width="448" height="299"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
-                                <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" selectionHighlightStyle="none" multipleSelection="NO" autosaveColumns="NO" typeSelect="NO" rowHeight="20" rowSizeStyle="automatic" headerView="5Va-Kz-KE9" viewBased="YES" id="biS-0R-WsE" customClass="ShortcutTableView" customModule="Kawa" customModuleProvider="target">
+                                <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" selectionHighlightStyle="none" multipleSelection="NO" autosaveColumns="NO" typeSelect="NO" rowHeight="20" rowSizeStyle="automatic" headerView="5Va-Kz-KE9" viewBased="YES" id="biS-0R-WsE" customClass="ShortcutTableView" customModule="okawa" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="448" height="276"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <size key="intercellSpacing" width="3" height="2"/>
@@ -250,7 +250,7 @@
                                             </textFieldCell>
                                             <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                             <prototypeCellViews>
-                                                <tableCellView identifier="ShortcutCellView" id="Rmx-MO-swj" customClass="ShortcutCellView" customModule="Kawa" customModuleProvider="target">
+                                                <tableCellView identifier="ShortcutCellView" id="Rmx-MO-swj" customClass="ShortcutCellView" customModule="okawa" customModuleProvider="target">
                                                     <rect key="frame" x="192" y="1" width="254" height="20"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <subviews>
