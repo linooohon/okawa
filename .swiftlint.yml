@@ -1,0 +1,29 @@
+included:
+  - okawa
+  - okawaTests
+
+excluded:
+  - build
+  - DerivedData
+  - .build
+
+disabled_rules:
+  - trailing_whitespace
+  - line_length
+  - type_body_length
+  - file_length
+  - function_body_length
+  - cyclomatic_complexity
+  - identifier_name
+  - large_tuple
+  - block_based_kvo
+  - implicit_optional_initialization
+  - non_optional_string_data_conversion
+
+force_unwrapping:
+  severity: warning
+
+opt_in_rules:
+  - empty_count
+  - closure_spacing
+  - force_unwrapping

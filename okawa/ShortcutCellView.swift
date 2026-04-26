@@ -5,6 +5,7 @@ class ShortcutCellView: NSTableCellView {
 
   var inputSource: InputSource?
   var shortcutKey: String?
+  var shortcutManager: ShortcutManager = .shared
   private var observingRecording = false
   private var kvoContext = 0
 
@@ -22,7 +23,7 @@ class ShortcutCellView: NSTableCellView {
 
   func shortcutValueDidChange(_ sender: MASShortcutView?) {
     guard let shortcutView = sender, let shortcut = shortcutView.shortcutValue else {
-      ShortcutManager.shared.rebuildBindings(with: InputSource.orderedSources(using: PermanentStorage.inputSourceOrder))
+      shortcutManager.rebuildBindings(with: InputSource.orderedSources(using: PermanentStorage.inputSourceOrder))
       return
     }
 
@@ -40,7 +41,7 @@ class ShortcutCellView: NSTableCellView {
       }
     }
 
-    ShortcutManager.shared.rebuildBindings(with: InputSource.orderedSources(using: PermanentStorage.inputSourceOrder))
+    shortcutManager.rebuildBindings(with: InputSource.orderedSources(using: PermanentStorage.inputSourceOrder))
   }
 
   private func startObservingRecording() {
@@ -64,16 +65,16 @@ class ShortcutCellView: NSTableCellView {
     stopObservingRecording()
   }
 
-  override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+  override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey: Any]?, context: UnsafeMutableRawPointer?) {
     guard context == &kvoContext, keyPath == "recording", let isRecording = change?[.newKey] as? Bool else {
       super.observeValue(forKeyPath: keyPath, of: object, change: change, context: context)
       return
     }
 
     if isRecording {
-      ShortcutManager.shared.suspendBindings()
+      shortcutManager.suspendBindings()
     } else {
-      ShortcutManager.shared.resumeBindings()
+      shortcutManager.resumeBindings()
     }
   }
 }

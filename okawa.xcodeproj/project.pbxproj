@@ -25,6 +25,7 @@
 		AA000003AAAA000000000001 /* ShortcutConflictChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000003AAAA000000000002 /* ShortcutConflictChecker.swift */; };
 		AA000005AAAA000000000001 /* LoginItemManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000005AAAA000000000002 /* LoginItemManager.swift */; };
 		AA000006AAAA000000000001 /* SettingsPorter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000006AAAA000000000002 /* SettingsPorter.swift */; };
+		BB000001BBBB000000000001 /* SettingsFileHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB000001BBBB000000000002 /* SettingsFileHandler.swift */; };
 		AA000007AAAA000000000001 /* SettingsPorterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000007AAAA000000000002 /* SettingsPorterTests.swift */; };
 		AA000008AAAA000000000001 /* ShortcutManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000008AAAA000000000002 /* ShortcutManagerTests.swift */; };
 		AA000009AAAA000000000001 /* PermanentStorageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000009AAAA000000000002 /* PermanentStorageTests.swift */; };
@@ -33,6 +34,8 @@
 		AA000004AAAA000000000001 /* InputSourceAbbreviationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000004AAAA000000000002 /* InputSourceAbbreviationTests.swift */; };
 		BB000001AAAA000000000001 /* InputSourceOrderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB000001AAAA000000000002 /* InputSourceOrderTests.swift */; };
 		BB000002AAAA000000000001 /* LoginItemManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB000002AAAA000000000002 /* LoginItemManagerTests.swift */; };
+		CC000001CCCC000000000001 /* ShortcutConflictCheckerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC000001CCCC000000000002 /* ShortcutConflictCheckerTests.swift */; };
+		CC000002CCCC000000000001 /* FirstLaunchLogicTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC000002CCCC000000000002 /* FirstLaunchLogicTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +68,7 @@
 		AA000003AAAA000000000002 /* ShortcutConflictChecker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortcutConflictChecker.swift; sourceTree = "<group>"; };
 		AA000005AAAA000000000002 /* LoginItemManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginItemManager.swift; sourceTree = "<group>"; };
 		AA000006AAAA000000000002 /* SettingsPorter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPorter.swift; sourceTree = "<group>"; };
+		BB000001BBBB000000000002 /* SettingsFileHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsFileHandler.swift; sourceTree = "<group>"; };
 		AA000007AAAA000000000002 /* SettingsPorterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPorterTests.swift; sourceTree = "<group>"; };
 		AA000008AAAA000000000002 /* ShortcutManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortcutManagerTests.swift; sourceTree = "<group>"; };
 		AA000009AAAA000000000002 /* PermanentStorageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermanentStorageTests.swift; sourceTree = "<group>"; };
@@ -74,6 +78,8 @@
 		AA000004AAAA000000000002 /* InputSourceAbbreviationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputSourceAbbreviationTests.swift; sourceTree = "<group>"; };
 		BB000001AAAA000000000002 /* InputSourceOrderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputSourceOrderTests.swift; sourceTree = "<group>"; };
 		BB000002AAAA000000000002 /* LoginItemManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginItemManagerTests.swift; sourceTree = "<group>"; };
+		CC000001CCCC000000000002 /* ShortcutConflictCheckerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortcutConflictCheckerTests.swift; sourceTree = "<group>"; };
+		CC000002CCCC000000000002 /* FirstLaunchLogicTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstLaunchLogicTests.swift; sourceTree = "<group>"; };
 		AA000001AAAA000000000003 /* okawaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = okawaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -130,6 +136,7 @@
 				AA000003AAAA000000000002 /* ShortcutConflictChecker.swift */,
 				AA000005AAAA000000000002 /* LoginItemManager.swift */,
 				AA000006AAAA000000000002 /* SettingsPorter.swift */,
+				BB000001BBBB000000000002 /* SettingsFileHandler.swift */,
 				CC4181671B6CB3CB007DA794 /* PreferencesViewController.swift */,
 				CC6D8ED11B654099005682C0 /* Images.xcassets */,
 				CC6D8ED31B654099005682C0 /* Main.storyboard */,
@@ -159,6 +166,8 @@
 				AA000009AAAA000000000002 /* PermanentStorageTests.swift */,
 				BB000001AAAA000000000002 /* InputSourceOrderTests.swift */,
 				BB000002AAAA000000000002 /* LoginItemManagerTests.swift */,
+				CC000001CCCC000000000002 /* ShortcutConflictCheckerTests.swift */,
+				CC000002CCCC000000000002 /* FirstLaunchLogicTests.swift */,
 			);
 			path = okawaTests;
 			sourceTree = "<group>";
@@ -297,6 +306,7 @@
 				AA000003AAAA000000000001 /* ShortcutConflictChecker.swift in Sources */,
 				AA000005AAAA000000000001 /* LoginItemManager.swift in Sources */,
 				AA000006AAAA000000000001 /* SettingsPorter.swift in Sources */,
+				BB000001BBBB000000000001 /* SettingsFileHandler.swift in Sources */,
 				EE92E8FD1F6CC98E00559B7C /* TISInputSource+Additions.swift in Sources */,
 				CC69E0781B66415300A92F58 /* ShortcutViewController.swift in Sources */,
 			);
@@ -314,6 +324,8 @@
 				AA000009AAAA000000000001 /* PermanentStorageTests.swift in Sources */,
 				BB000001AAAA000000000001 /* InputSourceOrderTests.swift in Sources */,
 				BB000002AAAA000000000001 /* LoginItemManagerTests.swift in Sources */,
+				CC000001CCCC000000000001 /* ShortcutConflictCheckerTests.swift in Sources */,
+				CC000002CCCC000000000001 /* FirstLaunchLogicTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -343,8 +355,8 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/shpakovski/MASShortcut.git";
 			requirement = {
-				branch = master;
-				kind = branch;
+				kind = revision;
+				revision = 6f2603c6b6cc18f64a799e5d2c9d3bbc467c413a;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */

@@ -24,7 +24,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
   }
 
+  private var isRunningTests: Bool {
+    return NSClassFromString("XCTestCase") != nil
+  }
+
   private func promptAccessibilityIfNeeded() {
+    guard !isRunningTests else { return }
+
     let trusted = AXIsProcessTrustedWithOptions(
       [kAXTrustedCheckOptionPrompt.takeUnretainedValue(): true] as CFDictionary
     )
