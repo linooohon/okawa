@@ -1,5 +1,7 @@
 cask "okawa" do
   version "1.1.0"
+  # TODO: Replace with actual sha256 after first release build.
+  # Run: shasum -a 256 okawa.zip
   sha256 :no_check
 
   url "https://github.com/linooohon/okawa/releases/download/v#{version}/okawa.zip"
