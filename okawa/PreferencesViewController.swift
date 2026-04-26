@@ -78,20 +78,24 @@ class PreferencesViewController: NSViewController {
       return
     }
 
+    guard let window = view.window else { return }
+
     let panel = NSSavePanel()
     panel.allowedFileTypes = ["json"]
     panel.nameFieldStringValue = "okawa-settings.json"
-    panel.beginSheetModal(for: view.window!) { response in
+    panel.beginSheetModal(for: window) { response in
       guard response == .OK, let url = panel.url else { return }
       try? data.write(to: url)
     }
   }
 
   @IBAction func importSettings(_ sender: Any?) {
+    guard let window = view.window else { return }
+
     let panel = NSOpenPanel()
     panel.allowedFileTypes = ["json"]
     panel.allowsMultipleSelection = false
-    panel.beginSheetModal(for: view.window!) { [weak self] response in
+    panel.beginSheetModal(for: window) { [weak self] response in
       guard response == .OK, let url = panel.url else { return }
       self?.performImport(from: url)
     }
