@@ -3,8 +3,8 @@ import Foundation
 import UserNotifications
 
 enum NotificationManager {
-  private static let notificationIdentifier = "kawa.input-source-switch"
-  private static let iconFilePrefix = "kawa-icon-"
+  private static let notificationIdentifier = "okawa.input-source-switch"
+  private static let iconFilePrefix = "okawa-icon-"
 
   static func requestAuthorizationIfNeeded(completion: @escaping (Bool) -> Void) {
     let center = UNUserNotificationCenter.current()
@@ -69,7 +69,7 @@ enum NotificationManager {
 
   private static func createAttachment(from image: NSImage) -> UNNotificationAttachment? {
     guard let url = writeImageToTemporaryLocation(image) else { return nil }
-    return try? UNNotificationAttachment(identifier: "kawa-icon", url: url, options: nil)
+    return try? UNNotificationAttachment(identifier: "okawa-icon", url: url, options: nil)
   }
 
   static func writeImageToTemporaryLocation(_ image: NSImage) -> URL? {

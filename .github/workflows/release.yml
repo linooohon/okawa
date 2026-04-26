@@ -17,10 +17,10 @@ jobs:
       - name: Resolve packages
         run: xcodebuild -resolvePackageDependencies
 
-      - name: Build Kawa (Release)
+      - name: Build okawa (Release)
         run: |
           xcodebuild \
-            -scheme kawa \
+            -scheme okawa \
             -configuration Release \
             -derivedDataPath build \
             "CODE_SIGN_IDENTITY=" \
@@ -29,16 +29,16 @@ jobs:
       - name: Zip app
         run: |
           cd build/Build/Products/Release
-          zip -r Kawa.zip Kawa.app
+          zip -r okawa.zip okawa.app
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
-          name: Kawa.zip
-          path: build/Build/Products/Release/Kawa.zip
+          name: okawa.zip
+          path: build/Build/Products/Release/okawa.zip
 
       - name: Attach to GitHub Release
         if: startsWith(github.ref, 'refs/tags/')
         uses: softprops/action-gh-release@v2
         with:
-          files: build/Build/Products/Release/Kawa.zip
+          files: build/Build/Products/Release/okawa.zip

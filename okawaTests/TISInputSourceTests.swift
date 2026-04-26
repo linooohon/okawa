@@ -1,5 +1,5 @@
 import XCTest
-@testable import Kawa
+@testable import okawa
 
 // These tests verify that TISInputSource extension properties
 // return safe fallback values when Carbon returns nil or unexpected types.

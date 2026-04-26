@@ -39,7 +39,7 @@
 			containerPortal = CC6D8EC01B654099005682C0 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = CC6D8EC71B654099005682C0;
-			remoteInfo = kawa;
+			remoteInfo = okawa;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -51,7 +51,7 @@
 		CC69E0751B663E1E00A92F58 /* MainWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainWindowController.swift; sourceTree = "<group>"; };
 		CC69E0771B66415300A92F58 /* ShortcutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShortcutViewController.swift; sourceTree = "<group>"; };
 		CC69E0791B6646B200A92F58 /* StatusBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusBar.swift; sourceTree = "<group>"; };
-		CC6D8EC81B654099005682C0 /* Kawa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kawa.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CC6D8EC81B654099005682C0 /* okawa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = okawa.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC6D8ECC1B654099005682C0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CC6D8ECD1B654099005682C0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CC6D8ED11B654099005682C0 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -70,7 +70,7 @@
 		AA000001AAAA000000000002 /* TISInputSourceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TISInputSourceTests.swift; sourceTree = "<group>"; };
 		AA000002AAAA000000000002 /* NotificationManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManagerTests.swift; sourceTree = "<group>"; };
 		AA000004AAAA000000000002 /* InputSourceAbbreviationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputSourceAbbreviationTests.swift; sourceTree = "<group>"; };
-		AA000001AAAA000000000003 /* kawaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = kawaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA000001AAAA000000000003 /* okawaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = okawaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,8 +95,8 @@
 		CC6D8EBF1B654099005682C0 = {
 			isa = PBXGroup;
 			children = (
-				CC6D8ECA1B654099005682C0 /* kawa */,
-				AA000001AAAA000000000004 /* kawaTests */,
+				CC6D8ECA1B654099005682C0 /* okawa */,
+				AA000001AAAA000000000004 /* okawaTests */,
 				CC6D8EC91B654099005682C0 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -104,13 +104,13 @@
 		CC6D8EC91B654099005682C0 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				CC6D8EC81B654099005682C0 /* Kawa.app */,
-				AA000001AAAA000000000003 /* kawaTests.xctest */,
+				CC6D8EC81B654099005682C0 /* okawa.app */,
+				AA000001AAAA000000000003 /* okawaTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		CC6D8ECA1B654099005682C0 /* kawa */ = {
+		CC6D8ECA1B654099005682C0 /* okawa */ = {
 			isa = PBXGroup;
 			children = (
 				CC6D8ECD1B654099005682C0 /* AppDelegate.swift */,
@@ -131,7 +131,7 @@
 				CC6D8ED31B654099005682C0 /* Main.storyboard */,
 				CC6D8ECB1B654099005682C0 /* Supporting Files */,
 			);
-			path = kawa;
+			path = okawa;
 			sourceTree = "<group>";
 		};
 		CC6D8ECB1B654099005682C0 /* Supporting Files */ = {
@@ -144,7 +144,7 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		AA000001AAAA000000000004 /* kawaTests */ = {
+		AA000001AAAA000000000004 /* okawaTests */ = {
 			isa = PBXGroup;
 			children = (
 				AA000001AAAA000000000002 /* TISInputSourceTests.swift */,
@@ -154,15 +154,15 @@
 				AA000008AAAA000000000002 /* ShortcutManagerTests.swift */,
 				AA000009AAAA000000000002 /* PermanentStorageTests.swift */,
 			);
-			path = kawaTests;
+			path = okawaTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		CC6D8EC71B654099005682C0 /* kawa */ = {
+		CC6D8EC71B654099005682C0 /* okawa */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CC6D8EE41B654099005682C0 /* Build configuration list for PBXNativeTarget "kawa" */;
+			buildConfigurationList = CC6D8EE41B654099005682C0 /* Build configuration list for PBXNativeTarget "okawa" */;
 			buildPhases = (
 				CC6D8EC41B654099005682C0 /* Sources */,
 				CC6D8EC51B654099005682C0 /* Frameworks */,
@@ -173,17 +173,17 @@
 			);
 			dependencies = (
 			);
-			name = kawa;
+			name = okawa;
 			packageProductDependencies = (
 				CCB5F9B72C3A2A8D00D43F0A /* MASShortcut */,
 			);
-			productName = kawa;
-			productReference = CC6D8EC81B654099005682C0 /* Kawa.app */;
+			productName = okawa;
+			productReference = CC6D8EC81B654099005682C0 /* okawa.app */;
 			productType = "com.apple.product-type.application";
 		};
-		AA000001AAAA000000000005 /* kawaTests */ = {
+		AA000001AAAA000000000005 /* okawaTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = AA000001AAAA000000000030 /* Build configuration list for PBXNativeTarget "kawaTests" */;
+			buildConfigurationList = AA000001AAAA000000000030 /* Build configuration list for PBXNativeTarget "okawaTests" */;
 			buildPhases = (
 				AA000001AAAA000000000006 /* Sources */,
 				AA000001AAAA000000000020 /* Frameworks */,
@@ -193,9 +193,9 @@
 			dependencies = (
 				AA000001AAAA000000000011 /* PBXTargetDependency */,
 			);
-			name = kawaTests;
-			productName = kawaTests;
-			productReference = AA000001AAAA000000000003 /* kawaTests.xctest */;
+			name = okawaTests;
+			productName = okawaTests;
+			productReference = AA000001AAAA000000000003 /* okawaTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -218,7 +218,7 @@
 					};
 				};
 			};
-			buildConfigurationList = CC6D8EC31B654099005682C0 /* Build configuration list for PBXProject "kawa" */;
+			buildConfigurationList = CC6D8EC31B654099005682C0 /* Build configuration list for PBXProject "okawa" */;
 			compatibilityVersion = "Xcode 11.4";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -233,8 +233,8 @@
 				CCB5F9B82C3A2A8D00D43F0A /* XCRemoteSwiftPackageReference "MASShortcut" */,
 			);
 			targets = (
-				CC6D8EC71B654099005682C0 /* kawa */,
-				AA000001AAAA000000000005 /* kawaTests */,
+				CC6D8EC71B654099005682C0 /* okawa */,
+				AA000001AAAA000000000005 /* okawaTests */,
 			);
 		};
 /* End PBXProject section */
@@ -314,7 +314,7 @@
 /* Begin PBXTargetDependency section */
 		AA000001AAAA000000000011 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = CC6D8EC71B654099005682C0 /* kawa */;
+			target = CC6D8EC71B654099005682C0 /* okawa */;
 			targetProxy = AA000001AAAA000000000010 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -464,14 +464,14 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = kawa/Info.plist;
+				INFOPLIST_FILE = okawa/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "net.noraesae.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = Kawa;
-				SWIFT_OBJC_BRIDGING_HEADER = kawa/BridgingHeader.h;
+				PRODUCT_NAME = okawa;
+				SWIFT_OBJC_BRIDGING_HEADER = okawa/BridgingHeader.h;
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 5.0;
 			};
@@ -486,14 +486,14 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = kawa/Info.plist;
+				INFOPLIST_FILE = okawa/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "net.noraesae.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = Kawa;
-				SWIFT_OBJC_BRIDGING_HEADER = kawa/BridgingHeader.h;
+				PRODUCT_NAME = okawa;
+				SWIFT_OBJC_BRIDGING_HEADER = okawa/BridgingHeader.h;
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 5.0;
 			};
@@ -511,10 +511,10 @@
 					"@executable_path/../Frameworks",
 					"@loader_path/../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = net.noraesae.kawaTests;
+				PRODUCT_BUNDLE_IDENTIFIER = net.noraesae.okawaTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Kawa.app/Contents/MacOS/Kawa";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/okawa.app/Contents/MacOS/okawa";
 				GENERATE_INFOPLIST_FILE = YES;
 			};
 			name = Debug;
@@ -531,10 +531,10 @@
 					"@executable_path/../Frameworks",
 					"@loader_path/../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = net.noraesae.kawaTests;
+				PRODUCT_BUNDLE_IDENTIFIER = net.noraesae.okawaTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Kawa.app/Contents/MacOS/Kawa";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/okawa.app/Contents/MacOS/okawa";
 				GENERATE_INFOPLIST_FILE = YES;
 			};
 			name = Release;
@@ -542,7 +542,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		CC6D8EC31B654099005682C0 /* Build configuration list for PBXProject "kawa" */ = {
+		CC6D8EC31B654099005682C0 /* Build configuration list for PBXProject "okawa" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CC6D8EE21B654099005682C0 /* Debug */,
@@ -551,7 +551,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CC6D8EE41B654099005682C0 /* Build configuration list for PBXNativeTarget "kawa" */ = {
+		CC6D8EE41B654099005682C0 /* Build configuration list for PBXNativeTarget "okawa" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CC6D8EE51B654099005682C0 /* Debug */,
@@ -560,7 +560,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		AA000001AAAA000000000030 /* Build configuration list for PBXNativeTarget "kawaTests" */ = {
+		AA000001AAAA000000000030 /* Build configuration list for PBXNativeTarget "okawaTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				AA000001AAAA000000000031 /* Debug */,

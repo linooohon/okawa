@@ -7,7 +7,7 @@ enum SettingsPorterError: LocalizedError {
   var errorDescription: String? {
     switch self {
     case .invalidFormat:
-      return "The file is not a valid Kawa settings file."
+      return "The file is not a valid okawa settings file."
     case .unsupportedVersion(let v):
       return "Unsupported settings version: \(v). This app supports version 1."
     }

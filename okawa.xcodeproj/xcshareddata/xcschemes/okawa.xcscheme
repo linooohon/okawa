@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "CC6D8EC71B654099005682C0"
-               BuildableName = "Kawa.app"
-               BlueprintName = "kawa"
-               ReferencedContainer = "container:kawa.xcodeproj">
+               BuildableName = "okawa.app"
+               BlueprintName = "okawa"
+               ReferencedContainer = "container:okawa.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -29,9 +29,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "CC6D8ED91B654099005682C0"
-               BuildableName = "kawaTests.xctest"
-               BlueprintName = "kawaTests"
-               ReferencedContainer = "container:kawa.xcodeproj">
+               BuildableName = "okawaTests.xctest"
+               BlueprintName = "okawaTests"
+               ReferencedContainer = "container:okawa.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -45,9 +45,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "CC6D8EC71B654099005682C0"
-            BuildableName = "Kawa.app"
-            BlueprintName = "kawa"
-            ReferencedContainer = "container:kawa.xcodeproj">
+            BuildableName = "okawa.app"
+            BlueprintName = "okawa"
+            ReferencedContainer = "container:okawa.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <Testables>
@@ -56,9 +56,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "CC6D8ED91B654099005682C0"
-               BuildableName = "kawaTests.xctest"
-               BlueprintName = "kawaTests"
-               ReferencedContainer = "container:kawa.xcodeproj">
+               BuildableName = "okawaTests.xctest"
+               BlueprintName = "okawaTests"
+               ReferencedContainer = "container:okawa.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -78,9 +78,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "CC6D8EC71B654099005682C0"
-            BuildableName = "Kawa.app"
-            BlueprintName = "kawa"
-            ReferencedContainer = "container:kawa.xcodeproj">
+            BuildableName = "okawa.app"
+            BlueprintName = "okawa"
+            ReferencedContainer = "container:okawa.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -95,9 +95,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "CC6D8EC71B654099005682C0"
-            BuildableName = "Kawa.app"
-            BlueprintName = "kawa"
-            ReferencedContainer = "container:kawa.xcodeproj">
+            BuildableName = "okawa.app"
+            BlueprintName = "okawa"
+            ReferencedContainer = "container:okawa.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

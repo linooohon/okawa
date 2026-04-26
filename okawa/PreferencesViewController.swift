@@ -67,7 +67,7 @@ class PreferencesViewController: NSViewController {
 
     let panel = NSSavePanel()
     panel.allowedFileTypes = ["json"]
-    panel.nameFieldStringValue = "kawa-settings.json"
+    panel.nameFieldStringValue = "okawa-settings.json"
     panel.beginSheetModal(for: view.window!) { response in
       guard response == .OK, let url = panel.url else { return }
       try? data.write(to: url)

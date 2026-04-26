@@ -1,6 +1,6 @@
 ![logo](resource/png/logo.png)
 
-# Kawa (fork) [![GitHub license](https://img.shields.io/badge/license-MIT-lightgrey.svg)](https://raw.githubusercontent.com/utatti/kawa/master/LICENSE)
+# okawa [![GitHub license](https://img.shields.io/badge/license-MIT-lightgrey.svg)](https://raw.githubusercontent.com/utatti/kawa/master/LICENSE)
 
 A macOS input source switcher with user-defined shortcuts. This is a fork of
 [utatti/kawa](https://github.com/utatti/kawa) with a refreshed toolchain and new
@@ -16,14 +16,14 @@ shortcuts UI.
 
 ```shell
 brew tap linooohon/okawa https://github.com/linooohon/okawa
-brew install --cask linooohon/okawa/kawa
+brew install --cask linooohon/okawa/okawa
 ```
 
 ### Manually
 
 The prebuilt binaries can be found in [Releases](https://github.com/linooohon/okawa/releases).
 
-Unzip `Kawa.zip` and move `Kawa.app` to `Applications`.
+Unzip `okawa.zip` and move `okawa.app` to `Applications`.
 
 ## Caveats
 
@@ -35,17 +35,17 @@ sources like [CJKV](https://en.wikipedia.org/wiki/CJK_characters).
 
 ## Development
 
-Dependencies are fetched with Swift Package Manager. Open `kawa.xcodeproj` in
+Dependencies are fetched with Swift Package Manager. Open `okawa.xcodeproj` in
 Xcode and it will resolve packages automatically, or resolve/build from the
 command line:
 
 ```bash
 xcodebuild -resolvePackageDependencies
-xcodebuild -scheme kawa -configuration Debug
+xcodebuild -scheme okawa -configuration Debug
 # run tests:
-xcodebuild -scheme kawa -destination 'platform=macOS' test
+xcodebuild -scheme okawa -destination 'platform=macOS' test
 # release build:
-xcodebuild -scheme kawa -configuration Release -derivedDataPath build
+xcodebuild -scheme okawa -configuration Release -derivedDataPath build
 ```
 
 ### Updating SPM dependencies
@@ -77,4 +77,4 @@ Commit the updated `Package.resolved`.
 
 ## License
 
-Kawa is released under the [MIT License](LICENSE).
+okawa is released under the [MIT License](LICENSE).
