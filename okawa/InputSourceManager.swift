@@ -27,8 +27,11 @@ class InputSource {
       }
     }
 
+    // iconRef is the only fallback when iconImageURL is unavailable.
+    // NSImage(iconRef:) is deprecated but Carbon IconRef has no modern
+    // replacement — this will remain until Apple provides an alternative.
     if iconImage == nil, let iconRef = tisInputSource.iconRef {
-      iconImage = NSImage(iconRef: iconRef)
+      iconImage = Self.imageFromIconRef(iconRef)
     }
 
     self.icon = iconImage
@@ -36,6 +39,11 @@ class InputSource {
 
   func select() {
     TISSelectInputSource(tisInputSource)
+  }
+
+  @available(macOS, deprecated: 10.15, message: "No replacement for Carbon IconRef")
+  private static func imageFromIconRef(_ iconRef: IconRef) -> NSImage {
+    return NSImage(iconRef: iconRef)
   }
 }
 
