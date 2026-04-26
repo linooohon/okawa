@@ -3,7 +3,10 @@ import Cocoa
 class MainWindowController: NSWindowController, NSWindowDelegate {
   static let shared: MainWindowController = {
     let storyboard = NSStoryboard(name: "Main", bundle: nil)
-    return storyboard.instantiateController(withIdentifier: "MainWindow") as! MainWindowController
+    guard let controller = storyboard.instantiateController(withIdentifier: "MainWindow") as? MainWindowController else {
+      fatalError("MainWindow controller not found in Main.storyboard — check the storyboard identifier")
+    }
+    return controller
   }()
 
   func showAndActivate(_ sender: AnyObject?) {
