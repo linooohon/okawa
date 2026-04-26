@@ -1,6 +1,6 @@
 import Cocoa
 
-@NSApplicationMain
+@main
 class AppDelegate: NSObject, NSApplicationDelegate {
   let statusBar = StatusBar.shared
 
@@ -13,15 +13,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
   }
 
   func applicationDidBecomeActive(_ notification: Notification) {
-    if !justLaunched || PermanentStorage.launchedForTheFirstTime {
-      showPreferences()
-    }
+    guard justLaunched else { return }
+    justLaunched = false
 
-    if justLaunched {
-      if PermanentStorage.launchedForTheFirstTime {
-        PermanentStorage.launchedForTheFirstTime = false
-      }
-      justLaunched = false
+    if PermanentStorage.launchedForTheFirstTime {
+      PermanentStorage.launchedForTheFirstTime = false
+      showPreferences()
     }
   }
 

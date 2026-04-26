@@ -5,6 +5,7 @@ import UserNotifications
 enum NotificationManager {
   private static let notificationIdentifier = "okawa.input-source-switch"
   private static let iconFilePrefix = "okawa-icon-"
+  private static let cleanupQueue = DispatchQueue(label: "okawa.icon-cleanup")
 
   static func requestAuthorizationIfNeeded(completion: @escaping (Bool) -> Void) {
     let center = UNUserNotificationCenter.current()
@@ -45,7 +46,9 @@ enum NotificationManager {
         )
 
         UNUserNotificationCenter.current().add(request) { _ in
-          cleanUpTemporaryIcons(excluding: currentIconURL)
+          cleanupQueue.async {
+            cleanUpTemporaryIcons(excluding: currentIconURL)
+          }
         }
       }
     }

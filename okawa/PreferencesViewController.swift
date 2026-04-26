@@ -86,7 +86,14 @@ class PreferencesViewController: NSViewController {
     panel.nameFieldStringValue = "okawa-settings.json"
     panel.beginSheetModal(for: window) { response in
       guard response == .OK, let url = panel.url else { return }
-      try? data.write(to: url)
+      do {
+        try data.write(to: url)
+      } catch {
+        let alert = NSAlert()
+        alert.messageText = "Export Failed"
+        alert.informativeText = error.localizedDescription
+        alert.runModal()
+      }
     }
   }
 
