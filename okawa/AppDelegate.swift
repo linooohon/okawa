@@ -7,6 +7,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
   var justLaunched: Bool = true
 
   func applicationDidFinishLaunching(_ aNotification: Notification) {
+    promptAccessibilityIfNeeded()
+
     if PermanentStorage.showsNotification {
       NotificationManager.requestAuthorizationIfNeeded { _ in }
     }
@@ -19,6 +21,28 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     if PermanentStorage.launchedForTheFirstTime {
       PermanentStorage.launchedForTheFirstTime = false
       showPreferences()
+    }
+  }
+
+  private func promptAccessibilityIfNeeded() {
+    let trusted = AXIsProcessTrustedWithOptions(
+      [kAXTrustedCheckOptionPrompt.takeUnretainedValue(): true] as CFDictionary
+    )
+    if !trusted {
+      DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+        let alert = NSAlert()
+        alert.messageText = "Accessibility Permission Required"
+        alert.informativeText = "okawa needs Accessibility access to switch input sources via shortcuts. Please grant access in System Settings > Privacy & Security > Accessibility, then relaunch the app."
+        alert.addButton(withTitle: "Open System Settings")
+        alert.addButton(withTitle: "Later")
+        alert.alertStyle = .warning
+
+        if alert.runModal() == .alertFirstButtonReturn {
+          if let url = URL(string: "x-apple.systempreferences:com.apple.preference.security?Privacy_Accessibility") {
+            NSWorkspace.shared.open(url)
+          }
+        }
+      }
     }
   }
 
