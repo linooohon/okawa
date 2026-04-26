@@ -21,21 +21,26 @@ class ShortcutCellView: NSTableCellView {
   }
 
   func shortcutValueDidChange(_ sender: MASShortcutView?) {
-    ShortcutManager.shared.rebuildBindings(with: InputSource.orderedSources(using: PermanentStorage.inputSourceOrder))
-  }
-
-  func selectInput() {
-    guard let inputSource = inputSource else { return }
-
-    inputSource.select()
-
-    if PermanentStorage.showsNotification {
-      showNotification(inputSource.name, icon: inputSource.icon)
+    guard let shortcutView = sender, let shortcut = shortcutView.shortcutValue else {
+      ShortcutManager.shared.rebuildBindings(with: InputSource.orderedSources(using: PermanentStorage.inputSourceOrder))
+      return
     }
-  }
 
-  func showNotification(_ message: String, icon: NSImage?) {
-    NotificationManager.deliver(message, icon: icon)
+    if ShortcutConflictChecker.isSystemShortcut(shortcut) {
+      let alert = NSAlert()
+      alert.messageText = "Shortcut Conflict"
+      alert.informativeText = "This shortcut may conflict with a system function. Are you sure you want to use it?"
+      alert.addButton(withTitle: "Keep Using")
+      alert.addButton(withTitle: "Reset")
+      alert.alertStyle = .warning
+
+      let response = alert.runModal()
+      if response == .alertSecondButtonReturn {
+        shortcutView.shortcutValue = nil
+      }
+    }
+
+    ShortcutManager.shared.rebuildBindings(with: InputSource.orderedSources(using: PermanentStorage.inputSourceOrder))
   }
 
   private func startObservingRecording() {

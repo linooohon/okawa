@@ -22,7 +22,26 @@
 		CCCE7CF12C3A469D00A3F9A4 /* AlwaysAllowShortcutValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCE7CF02C3A469D00A3F9A4 /* AlwaysAllowShortcutValidator.swift */; };
 		CCB5F9B62C3A2A8D00D43F0A /* MASShortcut in Frameworks */ = {isa = PBXBuildFile; productRef = CCB5F9B72C3A2A8D00D43F0A /* MASShortcut */; };
 		EE92E8FD1F6CC98E00559B7C /* TISInputSource+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE92E8FC1F6CC98E00559B7C /* TISInputSource+Additions.swift */; };
+		AA000003AAAA000000000001 /* ShortcutConflictChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000003AAAA000000000002 /* ShortcutConflictChecker.swift */; };
+		AA000005AAAA000000000001 /* LoginItemManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000005AAAA000000000002 /* LoginItemManager.swift */; };
+		AA000006AAAA000000000001 /* SettingsPorter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000006AAAA000000000002 /* SettingsPorter.swift */; };
+		AA000007AAAA000000000001 /* SettingsPorterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000007AAAA000000000002 /* SettingsPorterTests.swift */; };
+		AA000008AAAA000000000001 /* ShortcutManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000008AAAA000000000002 /* ShortcutManagerTests.swift */; };
+		AA000009AAAA000000000001 /* PermanentStorageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000009AAAA000000000002 /* PermanentStorageTests.swift */; };
+		AA000001AAAA000000000001 /* TISInputSourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000001AAAA000000000002 /* TISInputSourceTests.swift */; };
+		AA000002AAAA000000000001 /* NotificationManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000002AAAA000000000002 /* NotificationManagerTests.swift */; };
+		AA000004AAAA000000000001 /* InputSourceAbbreviationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000004AAAA000000000002 /* InputSourceAbbreviationTests.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		AA000001AAAA000000000010 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CC6D8EC01B654099005682C0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CC6D8EC71B654099005682C0;
+			remoteInfo = kawa;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		CC1FEF6D1B685E9A005E9BC8 /* BridgingHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BridgingHeader.h; sourceTree = "<group>"; };
@@ -41,7 +60,17 @@
 		CCB5F9A42C3A1B3E00D43F0A /* NotificationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 		CCF87D122C3A3AF100C181C4 /* ShortcutManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortcutManager.swift; sourceTree = "<group>"; };
 		CCCE7CF02C3A469D00A3F9A4 /* AlwaysAllowShortcutValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlwaysAllowShortcutValidator.swift; sourceTree = "<group>"; };
+		AA000003AAAA000000000002 /* ShortcutConflictChecker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortcutConflictChecker.swift; sourceTree = "<group>"; };
+		AA000005AAAA000000000002 /* LoginItemManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginItemManager.swift; sourceTree = "<group>"; };
+		AA000006AAAA000000000002 /* SettingsPorter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPorter.swift; sourceTree = "<group>"; };
+		AA000007AAAA000000000002 /* SettingsPorterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPorterTests.swift; sourceTree = "<group>"; };
+		AA000008AAAA000000000002 /* ShortcutManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortcutManagerTests.swift; sourceTree = "<group>"; };
+		AA000009AAAA000000000002 /* PermanentStorageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermanentStorageTests.swift; sourceTree = "<group>"; };
 		EE92E8FC1F6CC98E00559B7C /* TISInputSource+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TISInputSource+Additions.swift"; sourceTree = "<group>"; };
+		AA000001AAAA000000000002 /* TISInputSourceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TISInputSourceTests.swift; sourceTree = "<group>"; };
+		AA000002AAAA000000000002 /* NotificationManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManagerTests.swift; sourceTree = "<group>"; };
+		AA000004AAAA000000000002 /* InputSourceAbbreviationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputSourceAbbreviationTests.swift; sourceTree = "<group>"; };
+		AA000001AAAA000000000003 /* kawaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = kawaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +82,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		AA000001AAAA000000000020 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -60,6 +96,7 @@
 			isa = PBXGroup;
 			children = (
 				CC6D8ECA1B654099005682C0 /* kawa */,
+				AA000001AAAA000000000004 /* kawaTests */,
 				CC6D8EC91B654099005682C0 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -68,6 +105,7 @@
 			isa = PBXGroup;
 			children = (
 				CC6D8EC81B654099005682C0 /* Kawa.app */,
+				AA000001AAAA000000000003 /* kawaTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -85,6 +123,9 @@
 				CCF87D122C3A3AF100C181C4 /* ShortcutManager.swift */,
 				CCB5F9A42C3A1B3E00D43F0A /* NotificationManager.swift */,
 				CCCE7CF02C3A469D00A3F9A4 /* AlwaysAllowShortcutValidator.swift */,
+				AA000003AAAA000000000002 /* ShortcutConflictChecker.swift */,
+				AA000005AAAA000000000002 /* LoginItemManager.swift */,
+				AA000006AAAA000000000002 /* SettingsPorter.swift */,
 				CC4181671B6CB3CB007DA794 /* PreferencesViewController.swift */,
 				CC6D8ED11B654099005682C0 /* Images.xcassets */,
 				CC6D8ED31B654099005682C0 /* Main.storyboard */,
@@ -101,6 +142,19 @@
 				CC6D8ECC1B654099005682C0 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		AA000001AAAA000000000004 /* kawaTests */ = {
+			isa = PBXGroup;
+			children = (
+				AA000001AAAA000000000002 /* TISInputSourceTests.swift */,
+				AA000002AAAA000000000002 /* NotificationManagerTests.swift */,
+				AA000004AAAA000000000002 /* InputSourceAbbreviationTests.swift */,
+				AA000007AAAA000000000002 /* SettingsPorterTests.swift */,
+				AA000008AAAA000000000002 /* ShortcutManagerTests.swift */,
+				AA000009AAAA000000000002 /* PermanentStorageTests.swift */,
+			);
+			path = kawaTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -127,6 +181,23 @@
 			productReference = CC6D8EC81B654099005682C0 /* Kawa.app */;
 			productType = "com.apple.product-type.application";
 		};
+		AA000001AAAA000000000005 /* kawaTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AA000001AAAA000000000030 /* Build configuration list for PBXNativeTarget "kawaTests" */;
+			buildPhases = (
+				AA000001AAAA000000000006 /* Sources */,
+				AA000001AAAA000000000020 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AA000001AAAA000000000011 /* PBXTargetDependency */,
+			);
+			name = kawaTests;
+			productName = kawaTests;
+			productReference = AA000001AAAA000000000003 /* kawaTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -140,6 +211,10 @@
 					CC6D8EC71B654099005682C0 = {
 						CreatedOnToolsVersion = 6.4;
 						LastSwiftMigration = 1150;
+					};
+					AA000001AAAA000000000005 = {
+						CreatedOnToolsVersion = 15.0;
+						TestTargetID = CC6D8EC71B654099005682C0;
 					};
 				};
 			};
@@ -159,6 +234,7 @@
 			);
 			targets = (
 				CC6D8EC71B654099005682C0 /* kawa */,
+				AA000001AAAA000000000005 /* kawaTests */,
 			);
 		};
 /* End PBXProject section */
@@ -193,33 +269,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "set -euo pipefail
-PACKAGES_BASE=\"${DERIVED_DATA_DIR:-${BUILD_ROOT%/Build/Products}}/SourcePackages\"
-PACKAGES_ROOT=\"${SOURCE_PACKAGES_DIR_PATH:-$PACKAGES_BASE}\"
-BUNDLE_SOURCE=\"${PACKAGES_ROOT}/checkouts/MASShortcut/build/${CONFIGURATION}/MASShortcut_MASShortcut.bundle\"
-ALT_SOURCE=\"${BUILT_PRODUCTS_DIR}/PackageFrameworks/MASShortcut_MASShortcut.bundle\"
-BUNDLE_DEST=\"${CONFIGURATION_BUILD_DIR}/MASShortcut_MASShortcut.bundle\"
-
-echo \"Preparing MASShortcut bundle\"
-echo \"Primary source: $BUNDLE_SOURCE\"
-echo \"Alternate source: $ALT_SOURCE\"
-echo \"Destination: $BUNDLE_DEST\"
-
-if [ -d \"$BUNDLE_DEST\" ]; then
-  echo \"Bundle already present; skipping copy\"
-  exit 0
-fi
-
-if [ -d \"$BUNDLE_SOURCE\" ]; then
-  mkdir -p \"$(dirname \"$BUNDLE_DEST\")\"
-  rsync -a \"$BUNDLE_SOURCE\" \"$BUNDLE_DEST\"
-elif [ -d \"$ALT_SOURCE\" ]; then
-  mkdir -p \"$(dirname \"$BUNDLE_DEST\")\"
-  rsync -a \"$ALT_SOURCE\" \"$BUNDLE_DEST\"
-else
-  echo \"MASShortcut bundle not found; skipping copy\"
-fi
-";
+			shellScript = "set -euo pipefail\nPACKAGES_BASE=\"${DERIVED_DATA_DIR:-${BUILD_ROOT%/Build/Products}}/SourcePackages\"\nPACKAGES_ROOT=\"${SOURCE_PACKAGES_DIR_PATH:-$PACKAGES_BASE}\"\nBUNDLE_SOURCE=\"${PACKAGES_ROOT}/checkouts/MASShortcut/build/${CONFIGURATION}/MASShortcut_MASShortcut.bundle\"\nALT_SOURCE=\"${BUILT_PRODUCTS_DIR}/PackageFrameworks/MASShortcut_MASShortcut.bundle\"\nBUNDLE_DEST=\"${CONFIGURATION_BUILD_DIR}/MASShortcut_MASShortcut.bundle\"\n\necho \"Preparing MASShortcut bundle\"\necho \"Primary source: $BUNDLE_SOURCE\"\necho \"Alternate source: $ALT_SOURCE\"\necho \"Destination: $BUNDLE_DEST\"\n\nif [ -d \"$BUNDLE_DEST\" ]; then\n  echo \"Bundle already present; skipping copy\"\n  exit 0\nfi\n\nif [ -d \"$BUNDLE_SOURCE\" ]; then\n  mkdir -p \"$(dirname \"$BUNDLE_DEST\")\"\n  rsync -a \"$BUNDLE_SOURCE\" \"$BUNDLE_DEST\"\nelif [ -d \"$ALT_SOURCE\" ]; then\n  mkdir -p \"$(dirname \"$BUNDLE_DEST\")\"\n  rsync -a \"$ALT_SOURCE\" \"$BUNDLE_DEST\"\nelse\n  echo \"MASShortcut bundle not found; skipping copy\"\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -238,12 +288,36 @@ fi
 				CCF87D132C3A3AF100C181C4 /* ShortcutManager.swift in Sources */,
 				CCB5F9A52C3A1B3E00D43F0A /* NotificationManager.swift in Sources */,
 				CCCE7CF12C3A469D00A3F9A4 /* AlwaysAllowShortcutValidator.swift in Sources */,
+				AA000003AAAA000000000001 /* ShortcutConflictChecker.swift in Sources */,
+				AA000005AAAA000000000001 /* LoginItemManager.swift in Sources */,
+				AA000006AAAA000000000001 /* SettingsPorter.swift in Sources */,
 				EE92E8FD1F6CC98E00559B7C /* TISInputSource+Additions.swift in Sources */,
 				CC69E0781B66415300A92F58 /* ShortcutViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		AA000001AAAA000000000006 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA000001AAAA000000000001 /* TISInputSourceTests.swift in Sources */,
+				AA000002AAAA000000000001 /* NotificationManagerTests.swift in Sources */,
+				AA000004AAAA000000000001 /* InputSourceAbbreviationTests.swift in Sources */,
+				AA000007AAAA000000000001 /* SettingsPorterTests.swift in Sources */,
+				AA000008AAAA000000000001 /* ShortcutManagerTests.swift in Sources */,
+				AA000009AAAA000000000001 /* PermanentStorageTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		AA000001AAAA000000000011 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CC6D8EC71B654099005682C0 /* kawa */;
+			targetProxy = AA000001AAAA000000000010 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		CC6D8ED31B654099005682C0 /* Main.storyboard */ = {
@@ -425,6 +499,46 @@ fi
 			};
 			name = Release;
 		};
+		AA000001AAAA000000000031 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = net.noraesae.kawaTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Kawa.app/Contents/MacOS/Kawa";
+				GENERATE_INFOPLIST_FILE = YES;
+			};
+			name = Debug;
+		};
+		AA000001AAAA000000000032 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = net.noraesae.kawaTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Kawa.app/Contents/MacOS/Kawa";
+				GENERATE_INFOPLIST_FILE = YES;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -442,6 +556,15 @@ fi
 			buildConfigurations = (
 				CC6D8EE51B654099005682C0 /* Debug */,
 				CC6D8EE61B654099005682C0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AA000001AAAA000000000030 /* Build configuration list for PBXNativeTarget "kawaTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AA000001AAAA000000000031 /* Debug */,
+				AA000001AAAA000000000032 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

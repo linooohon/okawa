@@ -3,6 +3,9 @@ import Foundation
 import UserNotifications
 
 enum NotificationManager {
+  private static let notificationIdentifier = "kawa.input-source-switch"
+  private static let iconFilePrefix = "kawa-icon-"
+
   static func requestAuthorizationIfNeeded(completion: @escaping (Bool) -> Void) {
     let center = UNUserNotificationCenter.current()
     center.getNotificationSettings { settings in
@@ -25,20 +28,42 @@ enum NotificationManager {
     requestAuthorizationIfNeeded { granted in
       guard granted else { return }
 
-      let content = UNMutableNotificationContent()
-      content.body = message
+      DispatchQueue.main.async {
+        let content = UNMutableNotificationContent()
+        content.body = message
 
-      if let attachment = icon.flatMap(createAttachment(from:)) {
-        content.attachments = [attachment]
+        if let image = icon, let attachment = createAttachment(from: image) {
+          content.attachments = [attachment]
+        }
+
+        let request = UNNotificationRequest(
+          identifier: notificationIdentifier,
+          content: content,
+          trigger: nil
+        )
+
+        UNUserNotificationCenter.current().add(request) { _ in
+          cleanUpTemporaryIcons()
+        }
       }
+    }
+  }
 
-      let request = UNNotificationRequest(
-        identifier: UUID().uuidString,
-        content: content,
-        trigger: nil
-      )
+  static func checkAuthorizationStatus(completion: @escaping (UNAuthorizationStatus) -> Void) {
+    UNUserNotificationCenter.current().getNotificationSettings { settings in
+      completion(settings.authorizationStatus)
+    }
+  }
 
-      UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
+  static func cleanUpTemporaryIcons() {
+    let tmpDir = FileManager.default.temporaryDirectory
+    guard let contents = try? FileManager.default.contentsOfDirectory(
+      at: tmpDir, includingPropertiesForKeys: nil
+    ) else { return }
+
+    for url in contents where url.lastPathComponent.hasPrefix(iconFilePrefix)
+      && url.pathExtension == "png" {
+      try? FileManager.default.removeItem(at: url)
     }
   }
 
@@ -47,7 +72,7 @@ enum NotificationManager {
     return try? UNNotificationAttachment(identifier: "kawa-icon", url: url, options: nil)
   }
 
-  private static func writeImageToTemporaryLocation(_ image: NSImage) -> URL? {
+  static func writeImageToTemporaryLocation(_ image: NSImage) -> URL? {
     guard
       let tiff = image.tiffRepresentation,
       let bitmap = NSBitmapImageRep(data: tiff),
@@ -55,7 +80,7 @@ enum NotificationManager {
     else { return nil }
 
     let url = FileManager.default.temporaryDirectory
-      .appendingPathComponent("kawa-icon-\(UUID().uuidString).png")
+      .appendingPathComponent("\(iconFilePrefix)\(UUID().uuidString).png")
 
     do {
       try pngData.write(to: url)

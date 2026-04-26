@@ -7,10 +7,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
   var justLaunched: Bool = true
 
   func applicationDidFinishLaunching(_ aNotification: Notification) {
-    if PermanentStorage.launchedForTheFirstTime {
-      PermanentStorage.launchedForTheFirstTime = false
-    }
-
     if PermanentStorage.showsNotification {
       NotificationManager.requestAuthorizationIfNeeded { _ in }
     }
@@ -22,6 +18,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
 
     if justLaunched {
+      if PermanentStorage.launchedForTheFirstTime {
+        PermanentStorage.launchedForTheFirstTime = false
+      }
       justLaunched = false
     }
   }

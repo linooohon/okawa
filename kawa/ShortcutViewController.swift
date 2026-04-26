@@ -37,9 +37,11 @@ class ShortcutViewController: NSViewController, NSTableViewDataSource, NSTableVi
   }
 
   func createKeyboardCellView(_ tableView: NSTableView, _ inputSource: InputSource) -> NSTableCellView? {
-    let cell = tableView.makeView(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "KeyboardCellView"), owner: self) as? NSTableCellView
-    cell!.textField?.stringValue = inputSource.name
-    cell!.imageView?.image = inputSource.icon
+    guard let cell = tableView.makeView(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "KeyboardCellView"), owner: self) as? NSTableCellView else {
+      return nil
+    }
+    cell.textField?.stringValue = inputSource.name
+    cell.imageView?.image = inputSource.icon
     return cell
   }
 
