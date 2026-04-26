@@ -25,6 +25,7 @@
 		AA000003AAAA000000000001 /* ShortcutConflictChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000003AAAA000000000002 /* ShortcutConflictChecker.swift */; };
 		AA000005AAAA000000000001 /* LoginItemManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000005AAAA000000000002 /* LoginItemManager.swift */; };
 		AA000006AAAA000000000001 /* SettingsPorter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000006AAAA000000000002 /* SettingsPorter.swift */; };
+		BB000001BBBB000000000001 /* SettingsFileHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB000001BBBB000000000002 /* SettingsFileHandler.swift */; };
 		AA000007AAAA000000000001 /* SettingsPorterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000007AAAA000000000002 /* SettingsPorterTests.swift */; };
 		AA000008AAAA000000000001 /* ShortcutManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000008AAAA000000000002 /* ShortcutManagerTests.swift */; };
 		AA000009AAAA000000000001 /* PermanentStorageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000009AAAA000000000002 /* PermanentStorageTests.swift */; };
@@ -65,6 +66,7 @@
 		AA000003AAAA000000000002 /* ShortcutConflictChecker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortcutConflictChecker.swift; sourceTree = "<group>"; };
 		AA000005AAAA000000000002 /* LoginItemManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginItemManager.swift; sourceTree = "<group>"; };
 		AA000006AAAA000000000002 /* SettingsPorter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPorter.swift; sourceTree = "<group>"; };
+		BB000001BBBB000000000002 /* SettingsFileHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsFileHandler.swift; sourceTree = "<group>"; };
 		AA000007AAAA000000000002 /* SettingsPorterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPorterTests.swift; sourceTree = "<group>"; };
 		AA000008AAAA000000000002 /* ShortcutManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortcutManagerTests.swift; sourceTree = "<group>"; };
 		AA000009AAAA000000000002 /* PermanentStorageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermanentStorageTests.swift; sourceTree = "<group>"; };
@@ -130,6 +132,7 @@
 				AA000003AAAA000000000002 /* ShortcutConflictChecker.swift */,
 				AA000005AAAA000000000002 /* LoginItemManager.swift */,
 				AA000006AAAA000000000002 /* SettingsPorter.swift */,
+				BB000001BBBB000000000002 /* SettingsFileHandler.swift */,
 				CC4181671B6CB3CB007DA794 /* PreferencesViewController.swift */,
 				CC6D8ED11B654099005682C0 /* Images.xcassets */,
 				CC6D8ED31B654099005682C0 /* Main.storyboard */,
@@ -297,6 +300,7 @@
 				AA000003AAAA000000000001 /* ShortcutConflictChecker.swift in Sources */,
 				AA000005AAAA000000000001 /* LoginItemManager.swift in Sources */,
 				AA000006AAAA000000000001 /* SettingsPorter.swift in Sources */,
+				BB000001BBBB000000000001 /* SettingsFileHandler.swift in Sources */,
 				EE92E8FD1F6CC98E00559B7C /* TISInputSource+Additions.swift in Sources */,
 				CC69E0781B66415300A92F58 /* ShortcutViewController.swift in Sources */,
 			);
