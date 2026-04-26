@@ -1,4 +1,5 @@
 import Cocoa
+import UniformTypeIdentifiers
 import UserNotifications
 
 extension Notification.Name {
@@ -81,7 +82,7 @@ class PreferencesViewController: NSViewController {
     guard let window = view.window else { return }
 
     let panel = NSSavePanel()
-    panel.allowedFileTypes = ["json"]
+    panel.allowedContentTypes = [.json]
     panel.nameFieldStringValue = "okawa-settings.json"
     panel.beginSheetModal(for: window) { response in
       guard response == .OK, let url = panel.url else { return }
@@ -93,7 +94,7 @@ class PreferencesViewController: NSViewController {
     guard let window = view.window else { return }
 
     let panel = NSOpenPanel()
-    panel.allowedFileTypes = ["json"]
+    panel.allowedContentTypes = [.json]
     panel.allowsMultipleSelection = false
     panel.beginSheetModal(for: window) { [weak self] response in
       guard response == .OK, let url = panel.url else { return }
