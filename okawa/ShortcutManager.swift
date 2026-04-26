@@ -69,7 +69,7 @@ class ShortcutManager {
   }
 
   private func shortcutDefaultsKey(for source: InputSource) -> String? {
-    return source.id.replacingOccurrences(of: ".", with: "-")
+    return source.defaultsKey
   }
 
   private func shortcut(for key: String) -> MASShortcut? {

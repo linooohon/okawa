@@ -10,7 +10,7 @@ class ShortcutCellView: NSTableCellView {
 
   func setInputSource(_ inputSource: InputSource) {
     self.inputSource = inputSource
-    shortcutKey = inputSource.id.replacingOccurrences(of: ".", with: "-")
+    shortcutKey = inputSource.defaultsKey
 
     guard let shortcutKey = shortcutKey else { return }
 

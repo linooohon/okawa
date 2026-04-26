@@ -25,6 +25,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
   }
 
+  func applicationWillTerminate(_ aNotification: Notification) {
+    NotificationManager.cleanUpTemporaryIcons()
+  }
+
   @IBAction func showPreferences(_ sender: AnyObject? = nil) {
     MainWindowController.shared.showAndActivate(self)
   }

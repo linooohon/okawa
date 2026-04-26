@@ -1,5 +1,10 @@
 import Cocoa
+import UniformTypeIdentifiers
 import UserNotifications
+
+extension Notification.Name {
+  static let settingsDidImport = Notification.Name("okawa.settingsDidImport")
+}
 
 class PreferencesViewController: NSViewController {
   @IBOutlet weak var showNotificationCheckbox: NSButton!
@@ -55,7 +60,7 @@ class PreferencesViewController: NSViewController {
   @IBAction func exportSettings(_ sender: Any?) {
     let sources = InputSource.orderedSources(using: PermanentStorage.inputSourceOrder)
     let shortcuts: [(id: String, keyCode: Int?, modifierFlags: Int?)] = sources.map { source in
-      let key = source.id.replacingOccurrences(of: ".", with: "-")
+      let key = source.defaultsKey
       if let data = UserDefaults.standard.data(forKey: key),
          let shortcut = try? NSKeyedUnarchiver.unarchivedObject(ofClass: MASShortcut.self, from: data) {
         return (id: source.id, keyCode: Int(shortcut.keyCode), modifierFlags: Int(shortcut.modifierFlags.rawValue))
@@ -63,22 +68,35 @@ class PreferencesViewController: NSViewController {
       return (id: source.id, keyCode: nil, modifierFlags: nil)
     }
 
-    let data = SettingsPorter.export(shortcuts: shortcuts)
+    let data: Data
+    do {
+      data = try SettingsPorter.export(shortcuts: shortcuts)
+    } catch {
+      let alert = NSAlert()
+      alert.messageText = "Export Failed"
+      alert.informativeText = error.localizedDescription
+      alert.runModal()
+      return
+    }
+
+    guard let window = view.window else { return }
 
     let panel = NSSavePanel()
-    panel.allowedFileTypes = ["json"]
+    panel.allowedContentTypes = [.json]
     panel.nameFieldStringValue = "okawa-settings.json"
-    panel.beginSheetModal(for: view.window!) { response in
+    panel.beginSheetModal(for: window) { response in
       guard response == .OK, let url = panel.url else { return }
       try? data.write(to: url)
     }
   }
 
   @IBAction func importSettings(_ sender: Any?) {
+    guard let window = view.window else { return }
+
     let panel = NSOpenPanel()
-    panel.allowedFileTypes = ["json"]
+    panel.allowedContentTypes = [.json]
     panel.allowsMultipleSelection = false
-    panel.beginSheetModal(for: view.window!) { [weak self] response in
+    panel.beginSheetModal(for: window) { [weak self] response in
       guard response == .OK, let url = panel.url else { return }
       self?.performImport(from: url)
     }
@@ -106,7 +124,7 @@ class PreferencesViewController: NSViewController {
       }
 
       for entry in entries {
-        let key = entry.inputSourceID.replacingOccurrences(of: ".", with: "-")
+        let key = InputSource.defaultsKey(for: entry.inputSourceID)
         if let keyCode = entry.keyCode, let flags = entry.modifierFlags {
           let shortcut = MASShortcut(keyCode: keyCode, modifierFlags: NSEvent.ModifierFlags(rawValue: UInt(flags)))
           if let shortcutData = try? NSKeyedArchiver.archivedData(withRootObject: shortcut as Any, requiringSecureCoding: true) {
@@ -117,10 +135,8 @@ class PreferencesViewController: NSViewController {
         }
       }
 
-      // Reload the shortcut view controller
-      if let shortcutVC = children.compactMap({ $0 as? ShortcutViewController }).first {
-        shortcutVC.reloadInputSources()
-      }
+      // Notify sibling controllers to reload
+      NotificationCenter.default.post(name: .settingsDidImport, object: nil)
     } catch {
       let alert = NSAlert()
       alert.messageText = "Import Failed"

@@ -26,14 +26,14 @@ enum SettingsPorter {
     let modifierFlags: Int?
   }
 
-  static func export(shortcuts: [(id: String, keyCode: Int?, modifierFlags: Int?)]) -> Data {
+  static func export(shortcuts: [(id: String, keyCode: Int?, modifierFlags: Int?)]) throws -> Data {
     let entries = shortcuts.map {
       ShortcutEntry(inputSourceID: $0.id, keyCode: $0.keyCode, modifierFlags: $0.modifierFlags)
     }
     let file = SettingsFile(version: 1, shortcuts: entries)
     let encoder = JSONEncoder()
     encoder.outputFormatting = [.prettyPrinted, .sortedKeys]
-    return (try? encoder.encode(file)) ?? Data()
+    return try encoder.encode(file)
   }
 
   static func importData(_ data: Data) throws -> [ShortcutEntry] {
