@@ -9,7 +9,7 @@ class SettingsPorterTests: XCTestCase {
     let shortcuts: [(id: String, keyCode: Int?, modifierFlags: Int?)] = [
       (id: "com.apple.keylayout.ABC", keyCode: nil, modifierFlags: nil)
     ]
-    let data = SettingsPorter.export(shortcuts: shortcuts)
+    let data = try SettingsPorter.export(shortcuts: shortcuts)
     let result = try SettingsPorter.importData(data)
     XCTAssertEqual(result.first?.inputSourceID, "com.apple.keylayout.ABC")
   }
@@ -20,7 +20,7 @@ class SettingsPorterTests: XCTestCase {
     let shortcuts: [(id: String, keyCode: Int?, modifierFlags: Int?)] = [
       (id: "com.apple.keylayout.ABC", keyCode: 96, modifierFlags: 786432)
     ]
-    let data = SettingsPorter.export(shortcuts: shortcuts)
+    let data = try SettingsPorter.export(shortcuts: shortcuts)
     let result = try SettingsPorter.importData(data)
     XCTAssertEqual(result.first?.keyCode, 96)
     XCTAssertEqual(result.first?.modifierFlags, 786432)
@@ -61,7 +61,7 @@ class SettingsPorterTests: XCTestCase {
   // MARK: - T-07: export empty array, import back
 
   func testRoundTripEmptyArray() throws {
-    let data = SettingsPorter.export(shortcuts: [])
+    let data = try SettingsPorter.export(shortcuts: [])
     let result = try SettingsPorter.importData(data)
     XCTAssertEqual(result.count, 0)
   }
@@ -72,7 +72,7 @@ class SettingsPorterTests: XCTestCase {
     let shortcuts: [(id: String, keyCode: Int?, modifierFlags: Int?)] = (0..<100).map {
       (id: "source.\($0)", keyCode: $0, modifierFlags: $0 * 2)
     }
-    let data = SettingsPorter.export(shortcuts: shortcuts)
+    let data = try SettingsPorter.export(shortcuts: shortcuts)
     let result = try SettingsPorter.importData(data)
     XCTAssertEqual(result.count, 100)
     for (i, entry) in result.enumerated() {

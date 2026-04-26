@@ -67,7 +67,16 @@ class PreferencesViewController: NSViewController {
       return (id: source.id, keyCode: nil, modifierFlags: nil)
     }
 
-    let data = SettingsPorter.export(shortcuts: shortcuts)
+    let data: Data
+    do {
+      data = try SettingsPorter.export(shortcuts: shortcuts)
+    } catch {
+      let alert = NSAlert()
+      alert.messageText = "Export Failed"
+      alert.informativeText = error.localizedDescription
+      alert.runModal()
+      return
+    }
 
     let panel = NSSavePanel()
     panel.allowedFileTypes = ["json"]
