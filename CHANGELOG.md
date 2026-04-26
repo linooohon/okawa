@@ -1,3 +1,16 @@
+## 1.2.0 (26 Apr 2026)
+
+* Refactor: extract import/export logic into SettingsFileHandler
+* Refactor: inject ShortcutManager instead of using singleton directly
+* Feat: wire Launch at Login checkbox in storyboard
+* Feat: prompt for Accessibility permission on launch
+* Fix: skip Accessibility prompt during test execution
+* Fix: only show preferences on first-ever launch, not every activation
+* Test: add ShortcutConflictChecker and first-launch logic tests
+* CI: add test job that runs on push/PR, gate release on test pass
+* Chore: add SwiftLint config and fix lint violations
+* Docs: rewrite README with full install, usage, and uninstall guide
+
 ## 1.1.0 (10 Nov 2017)
 
 * Remove previous notifications on new one (#17)
