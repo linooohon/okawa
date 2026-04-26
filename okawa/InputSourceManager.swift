@@ -2,19 +2,15 @@ import Carbon
 import Cocoa
 
 class InputSource {
-  let tisInputSource: TISInputSource
+  private let tisInputSource: TISInputSource?
+  let id: String
+  let name: String
   let icon: NSImage?
-
-  var id: String {
-    return tisInputSource.id
-  }
-
-  var name: String {
-    return tisInputSource.name
-  }
 
   init(tisInputSource: TISInputSource) {
     self.tisInputSource = tisInputSource
+    self.id = tisInputSource.id
+    self.name = tisInputSource.name
 
     var iconImage: NSImage? = nil
 
@@ -37,7 +33,16 @@ class InputSource {
     self.icon = iconImage
   }
 
+  /// Test-only initializer for creating InputSource without Carbon API.
+  init(id: String, name: String, icon: NSImage? = nil) {
+    self.tisInputSource = nil
+    self.id = id
+    self.name = name
+    self.icon = icon
+  }
+
   func select() {
+    guard let tisInputSource else { return }
     TISSelectInputSource(tisInputSource)
   }
 
@@ -68,7 +73,11 @@ extension InputSource {
   }
 
   static func orderedSources(using order: [String]) -> [InputSource] {
-    let allSources = sources
+    return orderedSources(from: sources, using: order)
+  }
+
+  /// Core ordering logic, separated for testability.
+  static func orderedSources(from allSources: [InputSource], using order: [String]) -> [InputSource] {
     var ordered: [InputSource] = []
     // Use reduce to handle potential duplicate IDs (last one wins)
     var remaining = allSources.reduce(into: [String: InputSource]()) { $0[$1.id] = $1 }
