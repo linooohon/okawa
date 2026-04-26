@@ -32,6 +32,7 @@
 		AA000002AAAA000000000001 /* NotificationManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000002AAAA000000000002 /* NotificationManagerTests.swift */; };
 		AA000004AAAA000000000001 /* InputSourceAbbreviationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000004AAAA000000000002 /* InputSourceAbbreviationTests.swift */; };
 		BB000001AAAA000000000001 /* InputSourceOrderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB000001AAAA000000000002 /* InputSourceOrderTests.swift */; };
+		BB000002AAAA000000000001 /* LoginItemManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB000002AAAA000000000002 /* LoginItemManagerTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +73,7 @@
 		AA000002AAAA000000000002 /* NotificationManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManagerTests.swift; sourceTree = "<group>"; };
 		AA000004AAAA000000000002 /* InputSourceAbbreviationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputSourceAbbreviationTests.swift; sourceTree = "<group>"; };
 		BB000001AAAA000000000002 /* InputSourceOrderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputSourceOrderTests.swift; sourceTree = "<group>"; };
+		BB000002AAAA000000000002 /* LoginItemManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginItemManagerTests.swift; sourceTree = "<group>"; };
 		AA000001AAAA000000000003 /* okawaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = okawaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -156,6 +158,7 @@
 				AA000008AAAA000000000002 /* ShortcutManagerTests.swift */,
 				AA000009AAAA000000000002 /* PermanentStorageTests.swift */,
 				BB000001AAAA000000000002 /* InputSourceOrderTests.swift */,
+				BB000002AAAA000000000002 /* LoginItemManagerTests.swift */,
 			);
 			path = okawaTests;
 			sourceTree = "<group>";
@@ -310,6 +313,7 @@
 				AA000008AAAA000000000001 /* ShortcutManagerTests.swift in Sources */,
 				AA000009AAAA000000000001 /* PermanentStorageTests.swift in Sources */,
 				BB000001AAAA000000000001 /* InputSourceOrderTests.swift in Sources */,
+				BB000002AAAA000000000001 /* LoginItemManagerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

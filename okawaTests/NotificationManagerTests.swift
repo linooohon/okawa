@@ -27,6 +27,38 @@ class NotificationManagerTests: XCTestCase {
     NotificationManager.cleanUpTemporaryIcons()
   }
 
+  func testCleanUpExcludesCurrentIcon() {
+    let tmpDir = FileManager.default.temporaryDirectory
+    let old = tmpDir.appendingPathComponent("okawa-icon-old.png")
+    let current = tmpDir.appendingPathComponent("okawa-icon-current.png")
+
+    FileManager.default.createFile(atPath: old.path, contents: Data([0x89]))
+    FileManager.default.createFile(atPath: current.path, contents: Data([0x89]))
+
+    NotificationManager.cleanUpTemporaryIcons(excluding: current)
+
+    // old should be removed, current should be preserved
+    XCTAssertFalse(FileManager.default.fileExists(atPath: old.path))
+    XCTAssertTrue(FileManager.default.fileExists(atPath: current.path))
+
+    // Clean up
+    try? FileManager.default.removeItem(at: current)
+  }
+
+  func testCleanUpIgnoresNonOkawaFiles() {
+    let tmpDir = FileManager.default.temporaryDirectory
+    let unrelated = tmpDir.appendingPathComponent("some-other-file.png")
+
+    FileManager.default.createFile(atPath: unrelated.path, contents: Data([0x89]))
+
+    NotificationManager.cleanUpTemporaryIcons()
+
+    XCTAssertTrue(FileManager.default.fileExists(atPath: unrelated.path))
+
+    // Clean up
+    try? FileManager.default.removeItem(at: unrelated)
+  }
+
   func testWriteImageReturnsDistinctURLs() {
     let image = NSImage(size: NSSize(width: 16, height: 16))
     image.lockFocus()
