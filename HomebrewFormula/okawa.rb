@@ -9,7 +9,7 @@ class Okawa < Formula
   url "https://github.com/linooohon/okawa.git",
       :using => :git,
       :branch => "main"
-  version "1.1.0"
+  version "1.2.0"
 
   depends_on :xcode => ["15.0", :build]
 
