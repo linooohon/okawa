@@ -1,5 +1,3 @@
-![logo](resource/png/logo.png)
-
 # okawa [![GitHub license](https://img.shields.io/badge/license-MIT-lightgrey.svg)](https://raw.githubusercontent.com/utatti/kawa/master/LICENSE)
 
 A lightweight macOS menu bar app that lets you switch input sources with custom keyboard shortcuts. Based on [hatashiro/kawa](https://github.com/hatashiro/kawa/).
